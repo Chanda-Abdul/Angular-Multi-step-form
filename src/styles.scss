@@ -3,11 +3,11 @@
 html,
 body {
   height: 100%;
+
 }
 
 body {
   box-sizing: border-box;
-
   font-family: variables.$global-font;
   font-size: 16px;
   @include variables.flexSpaceBetween(column);
@@ -16,7 +16,8 @@ body {
   // height: 100vh;
 }
 
-* {margin: 0;
+* {
+  margin: 0;
   padding: 0;
   box-sizing: inherit;
   transition: all .25s ease-in-out;
@@ -24,6 +25,246 @@ body {
 
 .container {
   width: 100vw;
+}
+
+app-form {
+  position: relative;
+  // background-color: variables.$white;
+}
+
+.step-card{
+//  *{background-color: variables.$white;}
+}
+mat-card {
+  background-color: variables.$white !important;
+  position: absolute;
+  @include variables.flexCenter(column);
+  // justify-content: space-evenly;
+  top: -99px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  padding: 3rem 1rem;
+  width: 343px;
+  // min-height: 376px;
+  height: fit-content;
+
+  border-radius: 0.625rem;
+
+}
+
+// mat-card-header {
+//   // width: 100%;
+//   @include variables.flexCenter(column);
+
+// }
+
+img{
+  width: 56px;
+  height: 56px;
+  margin: 1rem;
+}
+
+
+form {
+
+  // @include variables.flexSpaceBetween(column);
+  // justify-content: space-evenly;
+  // margin: 2rem 1.5rem;
+  // padding: 1.5rem;
+  // height: fit-content;
+  // width: 343px;
+
+  input {
+    width: 295px;
+    text-align: left;
+  }
+}
+
+
+
+// .title {
+//   @include variables.flexSpaceBetween(column);
+//   height: 87px;
+//   // margin-bottom: 2rem;
+// }
+
+mat-card-title {
+  @include variables.heading-m;
+  width: 100%;
+}
+
+p {
+  @include variables.body-primary-l;
+  text-align: center;
+  margin:  2rem 1rem 6rem 1rem;
+}
+
+span {
+  display: none;
+}
+
+.alert-danger {
+  display: contents;
+}
+
+.form-controls {
+  width: 295px;
+  min-height: 203px;
+  @include variables.flexSpaceBetween(column);
+}
+
+mat-card-content {
+  height: 500px;
+  @include variables.flexSpaceBetween(column);
+
+  h2 {
+    @include variables.body-primary-xs;
+    color: variables.$marine-blue;
+    margin-bottom: .1rem;
+    height: 100%;
+  }
+
+  h3 {
+    @include variables.body-secondary-s;
+    color: variables.$cool-gray;
+    margin-bottom: .1rem;
+    height: 100%;
+  }
+
+  h4 {
+    @include variables.body-secondary-s;
+    color: variables.$purplish-blue;
+    text-align: right;
+    height: 100%;
+  }
+
+  height: 100%;
+
+  * {
+    height: 100%;
+  }
+}
+
+label {
+  @include variables.body-secondary-s;
+  padding-block-end: 0.25rem;
+  width: 100%;
+  text-align: left;
+}
+
+input {
+  color: variables.$alabaster !important;
+  height: 2.5rem;
+  width: 295px;
+  border-radius: 0.5rem;
+  border: 1px solid variables.$light-blue;
+  padding: 0.5rem 0 0.5rem 1rem;
+}
+
+.form-controls input {
+  @include variables.body-primary-xs;
+
+  :focus,
+  .ng-valid {
+    color: variables.$marine-blue;
+  }
+}
+
+.mat-button-toggle-group {
+  @include variables.flexCenter(column) ;
+  flex-direction: column !important;
+  border: none;
+  width: 295px;
+  margin: 1rem 0;
+}
+
+mat-button-toggle {
+  width: 100%;
+  height: 77px;
+  border-radius: 0.5rem;
+  border: 1px solid variables.$light-gray;
+  @include variables.flexCenter(row);
+  margin: 0.5rem 0;
+  padding: 0;
+
+  .plan,
+  .addOn {
+    @include variables.flexSpaceBetween(row);
+    width: 100%;
+  }
+
+  .details {
+    * {
+      display: contents;
+    }
+
+    // height: 77px;
+    text-align: left;
+    margin: 1.5rem 0 0 1rem;
+    padding: 0 0 0.75rem 0;
+    @include variables.flexCenter(column);
+    align-items: baseline;
+    justify-content: flex-start;
+    width: 185px;
+  }
+
+  p {
+    @include variables.body-secondary-s;
+    color: variables.$marine-blue;
+  }
+}
+
+
+.toggle-area {
+  width: 100%;
+  height: 48px;
+  border-radius: 0.5rem;
+  background-color: variables.$magnolia;
+  @include variables.flexCenter(row);
+}
+
+.toggle {
+  width: 183px;
+  @include variables.flexCenter(row);
+  justify-content: space-evenly;
+}
+
+
+.addon-section {
+  @include variables.flexSpaceBetween(column);
+  margin: 2rem 0 .75rem 0;
+
+}
+
+.addOn {
+  @include variables.flexSpaceBetween(row);
+  width: 230px;
+  // height: 72px;
+}
+
+.details {
+  @include variables.flexSpaceBetween(column);
+  width: 100%;
+  align-items: baseline;
+  justify-content: space-evenly;
+  // height: 72px;
+}
+
+mat-checkbox {
+  color: variables.$purplish-blue;
+  @include variables.flexSpaceBetween(row);
+  border: 1px solid variables.$light-gray;
+  // height: 62px;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  width: 295px;
+}
+
+.mat-button-toggle-checked,
+.mat-mdc-checkbox-checked {
+  border: 1px solid variables.$purplish-blue;
+  background-color: variables.$magnolia;
 }
 
 .attribution {
@@ -57,5 +298,9 @@ h3 {
   @include variables.body-primary-s();
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+

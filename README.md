@@ -77,7 +77,7 @@ Users should be able to:
 
 - <b>[Angular](https://angular.io/)</b> (<b>JavaScript</b> framework)
   <!-- - <s>[Angular Material](https://material.angular.io/)</s> -->
-  - Reactive Forms 😭
+  - Reactive Forms
   <!-- - [RxJs](https://rxjs.dev/guide/overview) - library for composing asynchronous and event-based programs by using observable sequences. -->
   - TypeScript
   - JavaScript

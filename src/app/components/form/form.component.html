@@ -1,183 +1,28 @@
 <div class="container">
-  <form novalidate
+
+  <ng-container *ngIf="activeStep === 1">
+    <app-step-one-personal-details></app-step-one-personal-details>
+  </ng-container>
+  <ng-container *ngIf="activeStep === 2">
+    <app-step-two-plan-details></app-step-two-plan-details> </ng-container>
+  <ng-container *ngIf="activeStep === 3">
+    <app-step-three-add-ons></app-step-three-add-ons> </ng-container>
+  <ng-container *ngIf="activeStep === 4">
+    <app-step-four-summary></app-step-four-summary> </ng-container>
+  <ng-container *ngIf="activeStep === 5">
+    <app-step-five-confim></app-step-five-confim> </ng-container>
+  <!-- <form novalidate
         name="stepForm"
-        (submit)="submit()"
-        [formGroup]="stepForm"> <!-- Step 1 start -->
-    <mat-card class="step-one"
-              *ngIf="activeStep === 1">
+        (submit)="confirmAndSubmitForm()"> -->
 
-
-      <mat-card-header>
-        <mat-card-title-group class="title">
-          <mat-card-title>Personal info</mat-card-title>
-          <mat-card-subtitle>Please provide your name, email address, and phone number.</mat-card-subtitle>
-        </mat-card-title-group>
-      </mat-card-header>
-      <mat-card-content class="form-controls">
-
-
-        <label for="name">Name</label>
-        <input type="text"
-               name="name"
-               placeholder="e.g. Stephen King"
-               formControlName="name"
-               [ngClass]="{'alert-danger': nameValidationErrorMessage }" />
-        <span class="alert-danger">{{nameValidationErrorMessage}}</span>
-        <label for="email">Email Address</label>
-        <input type="text"
-               name="email"
-               placeholder="e.g. stephenking@lorem.com"
-               formControlName="email"
-               required>
-        <label for="phone">Phone Number</label>
-        <input type="text"
-               name="phone"
-               placeholder="e.g. +1 234 567 890"
-               formControlName="phone"
-               required>
-
-
-      </mat-card-content>
-    </mat-card>
-    <!-- Step 1 end -->
-
-    <!-- Step 2 start -->
-
-    <mat-card class="step-two"
-              *ngIf="activeStep === 2">
-      <mat-card-header>
-        <mat-card-title-group class="title">
-          <mat-card-title>Select your plan</mat-card-title>
-          <mat-card-subtitle>You have the option of monthly or yearly billing.</mat-card-subtitle>
-        </mat-card-title-group>
-      </mat-card-header>
-      <mat-card-content>
-        <mat-button-toggle-group name="options"
-                                 aria-label="planOptions">
-          <mat-button-toggle *ngFor="let plan of planOptions[timeFrame]"
-                             [value]="plan"
-                             aria-pressed="false"
-                             (change)="setTotal(plan.addToTotal)">
-            <div class="plan">
-              <img mat-card-image
-                   src="{{ plan.icon }}"
-                   alt="plan-icon" />
-              <div class="details">
-                <h2>{{ plan.type }}</h2>
-                <h3>{{ plan.price }}</h3>
-                <p>{{ plan.promo }}</p>
-              </div>
-            </div>
-          </mat-button-toggle>
-        </mat-button-toggle-group>
-        <div class="toggle-area">
-          <div class="toggle">
-            <label>Monthly</label>
-            <mat-slide-toggle [checked]="false"
-                              (change)="isSlideChecked()"></mat-slide-toggle>
-
-            <label>Yearly</label>
-          </div>
-        </div>
-      </mat-card-content>
-    </mat-card>
-
-    <!-- Step 2 end -->
-
-    <!-- Step 3 start -->
-
-    <mat-card class="step-three"
-              *ngIf="activeStep === 3">
-      <mat-card-header>
-        <mat-card-title-group class="title">
-          <mat-card-title>Pick add-ons</mat-card-title>
-          <mat-card-subtitle> Add-ons help enhance your gaming experience.</mat-card-subtitle>
-        </mat-card-title-group>
-      </mat-card-header>
-      <!-- [formGroup]="stepForm.addOnFormGroup" -->
-      <mat-card-content class="addon-section">
-
-        <mat-checkbox *ngFor="let addOn of addOnOptions"
-                      formControlName="{{addOn.formName}}"
-                      (change)="updateTotal($event.checked ,addOn.timeFrame[timeFrame].addToTotal)">
-          <div class="addOn">
-            <div class="details">
-              <h2>{{addOn.addOn}}</h2>
-              <h3>
-                {{addOn.desc}}</h3>
-            </div>
-            <h4>{{addOn.timeFrame[timeFrame].price}}</h4>
-
-          </div>
-
-
-        </mat-checkbox>
-      </mat-card-content>
-    </mat-card>
-
-    <!-- Step 3 end -->
-    <!-- Step 4 start -->
-
-    <mat-card class="step-four"
-              *ngIf="activeStep === 4">
-      <mat-card-header>
-        <mat-card-title-group class="title">
-          <mat-card-title>Finishing up</mat-card-title>
-          <mat-card-subtitle>Double-check everything looks OK before confirming.</mat-card-subtitle>
-        </mat-card-title-group>
-      </mat-card-header>
-      <mat-card-content>
-        <!-- TO DO => Dynamically add subscription and add-on selections here -->
-        <p>Total (per month/year) {{totalCost}}</p>
-
-        <!-- <h3>Personal Info</h3>
-        <mat-list role="list">
-          <mat-list-item role="listitem"> Name: {{this.name}}</mat-list-item>
-          <mat-list-item role="listitem"> Email: {{this.email}}</mat-list-item>
-          <mat-list-item role="listitem"> Phone Number: {{this.phone}}</mat-list-item>
-        </mat-list>
-        <!-- <mat-divider></mat-divider> -->
-        <!-- <h3>Plan:</h3> -->
-
-        <!-- {{ctrl.plan}} - {{ctrl.term}} -->
-
-
-        <!-- <h3> Add Ons:</h3> -->
-
-        <!-- <ul>
-          <li ng-if="ctrl.onlineService">Online Service</li>
-          <li ng-if="ctrl.largerStorage">Larger Storage</li>
-        </ul> -->
-
-      </mat-card-content>
-    </mat-card>
+  <!-- [formGroup]="stepForm" -->
 
 
 
 
 
 
-
-
-    <!-- Confirmation -->
-    <!-- Step 5 start -->
-    <mat-card class="step-five"
-              *ngIf="activeStep === 5">
-
-
-
-      <mat-card-header>
-        <mat-card-title-group class="title">
-          <mat-card-title>Thank you!</mat-card-title>
-        </mat-card-title-group>
-        <mat-card-content>
-          <p> Thanks for confirming your subscription! We hope you have fun
-            using our platform. If you ever need support, please feel free
-            to email us at support@loremgaming.com.</p>
-        </mat-card-content>
-      </mat-card-header>
-    </mat-card><!-- Step 5 end [activeStep]="activeStep"-->
-  </form>
+  <!-- </form> -->
   <div class="nav">
     <a *ngIf="activeStep > 1"
        (click)="goBack()">Go Back</a>
@@ -186,7 +31,7 @@
             (click)="nextStep()">Next Step</button>
     <button class="btn btn-confirm"
             *ngIf="activeStep === 5"
-            (click)="confirm()">Confirm</button>
+            (click)="confirmAndSubmitForm()">Confirm</button>
 
   </div>
   <div class="attribution">
