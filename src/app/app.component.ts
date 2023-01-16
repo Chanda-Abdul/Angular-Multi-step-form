@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'multi-step-form-main';
+  title = 'Frontend Mentor | Multi-step form';
 }

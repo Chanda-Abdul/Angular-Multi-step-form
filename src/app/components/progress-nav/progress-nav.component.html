@@ -1,0 +1,12 @@
+<div class="nav">{{step}}
+  <p *ngIf="step > 1" (click)="goBack()">Go Back</p>
+  <button class="btn btn-next"  (click)="nextStep()">Next Step</button>
+  <button class="btn"*ngIf="step === 6" (click)="confirm()">Confirm</button>
+<!--*ngIf= "step !== 6"  -->
+</div>
+<div class="attribution">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+  Coded by <a href="#">Your Name Here</a>.
+</div>
+
+

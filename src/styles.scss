@@ -1,1 +1,61 @@
-/* You can add global styles to this file, and also import other style files */
+@use './variables';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  box-sizing: border-box;
+
+  font-family: variables.$global-font;
+  font-size: 16px;
+  @include variables.flexSpaceBetween(column);
+  // text-align: center;
+  width: 100vw;
+  // height: 100vh;
+}
+
+* {margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  transition: all .25s ease-in-out;
+}
+
+.container {
+  width: 100vw;
+}
+
+.attribution {
+  font-size: .75rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: variables.$purplish-blue;
+}
+
+
+.btn {
+  height: 2.5rem;
+  width: 97px;
+  background-color: variables.$marine-blue;
+  color: variables.$white;
+  font-family: variables.$global-font;
+  border: none;
+  border-radius: .5rem;
+}
+
+
+
+h1 {
+  @include variables.heading-m;
+}
+
+h2,
+h3 {
+  @include variables.body-primary-s();
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

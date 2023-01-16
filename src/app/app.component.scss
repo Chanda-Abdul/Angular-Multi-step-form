@@ -1,0 +1,8 @@
+@use '/src/variables';
+
+.container{
+  @include variables.flexSpaceBetween(column);
+  width: 100%;
+  height: 100%;
+  // background-color: variables.$light-blue;
+}

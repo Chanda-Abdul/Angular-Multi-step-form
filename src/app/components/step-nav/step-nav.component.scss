@@ -1,0 +1,82 @@
+@use '/src/variables';
+
+
+:host {
+  width: 100vw;
+  height: 11rem;
+  position: relative;
+  background-color: variables.$purplish-blue;
+  background: url('/assets/images/bg-sidebar-mobile.svg') top left;
+  background-size: cover;
+  @include variables.flexCenter(column);
+  justify-content: flex-start;
+}
+
+.step-display {
+  @include variables.flexSpaceBetween(row);
+  width: 11rem;
+  color: variables.$white;
+  height: 100px;
+}
+
+.step {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid variables.$white;
+  border-radius: 50%;
+  @include variables.flexCenter(column);
+
+  // * {
+  //   @include variables.body-primary-s();
+  // }
+
+
+
+}
+
+// h2 {
+//   @include variables.body-primary-s();
+// }
+
+h3 {
+  display: none;
+}
+
+.selected {
+  background-color: variables.$light-blue;
+  color: variables.$purplish-blue;
+  border: none;
+}
+
+@media (min-width: 600px) {
+  :host {
+    background: url('/assets/images/bg-sidebar-desktop.svg');
+
+  }
+
+  h3 {
+    display: contents;
+  }
+}
+
+
+
+// .step-display::before {
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   // height: 100%;
+//   // width: 100%;
+
+
+//   z-index: -1;
+// }
+
+// h2 {
+//   height: 2rem;
+//   width: 2rem;
+//   border: 1px solid #FFFFFF;
+//   border-radius: 50%;
+//   text-align: center;
+// }
