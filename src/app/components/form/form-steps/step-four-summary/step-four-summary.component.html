@@ -6,26 +6,36 @@
     </mat-card-title-group>
   </mat-card-header>
   <mat-card-content>
-    <!-- TO DO => Dynamically add subscription and add-on selections here -->
+    <table>
+      <th>
+        <tr>
+          {{planDetails.plan}} ({{planDetails.duration}}) <span>${{planDetails.planCost}}</span>
+        </tr><button mat-button>Change</button>
+      </th>
+      <mat-divider></mat-divider>
+      <ng-container *ngIf="addOnDetails.service">
+        <tr>
+          Online Service  <span>${{addOnDetails.serviceCost}}</span>
+        </tr>
+      </ng-container>
+      <ng-container *ngIf="addOnDetails.storage">
+        <tr>
+          Larger Storage  <span>${{addOnDetails.storageCost}}</span>
+        </tr>
+      </ng-container>
+      <ng-container *ngIf="addOnDetails.customization">
+        <tr>
+          Customizable Profile  <span>${{addOnDetails.customizationCost}}</span>
+        </tr>
+      </ng-container>
 
-    <p>Total (per month/year) {{totalCost}}</p>
-    <h3>Personal Info</h3>
-    <ul role="list">
-      <li role="listitem"> Name: {{this.name}}</li>
-      <li role="listitem"> Email: {{this.email}}</li>
-      <li role="listitem"> Phone Number: {{this.phone}}</li>
-    </ul>
+      <tfoot class="total">
+        Total (per month/year)<span> ${{planDetails.totalCost}}</span>
+      </tfoot>
+    </table>
 
-    <mat-divider></mat-divider>
-    <h3>Plan:</h3>
-    <!-- {{ctrl.plan}} - {{ctrl.term}} -->
-    <h3> Add Ons:</h3>
-    <ul>
-      <li ng-if="ctrl.onlineService">Online Service</li>
-      <li ng-if="ctrl.largerStorage">Larger Storage</li>
-    </ul>
   </mat-card-content>
 </mat-card>
 
 
-      <!-- <form [formGroup]="personalDetails"></form> -->
+<!-- <form [formGroup]="personalDetails"></form> -->

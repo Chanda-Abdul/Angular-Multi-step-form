@@ -1,18 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup, FormGroupDirective, FormGroupName, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-step-one-personal-details',
   templateUrl: './step-one-personal-details.component.html',
   styleUrls: ['./step-one-personal-details.component.scss']
 })
-export class StepOnePersonalDetailsComponent implements OnInit {
-  personalDetails!: FormGroup;
+export class StepOnePersonalDetailsComponent implements OnInit, OnDestroy {
+  stepForm!: FormGroup;
 
-  current: any;
-  name = 'fake name';
-  email = 'fake email';
-  phone = '555-555-5555';
+  @Input() formGroupName!: string;
+
+  // current: any;
+  // name = 'fake name';
+  // email = 'fake email';
+  // phone = '555-555-5555';
   nameValidationErrorMessage!: string;
 
   private nameValidationMessages: any = {
@@ -20,15 +22,16 @@ export class StepOnePersonalDetailsComponent implements OnInit {
     minlength: 'Name must be longer than 4 characters.'
   }
 
-  constructor(private fb: FormBuilder) { }
+  constructor(  private rootFormGroup: FormGroupDirective) { }
 
   ngOnInit(): void {
-    this.personalDetails = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(4)]],
-      email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required, Validators.minLength(10)]],
-    });
+
+
+    this.stepForm = this.rootFormGroup.control.get(this.formGroupName) as FormGroup;
+// console.log(this.rootFormGroup.form.get('personalDetails').value)
   }
+
+  ngOnDestroy(): void {}
   setNameValidationErrorMessage(n: AbstractControl): void {
     this.nameValidationErrorMessage = '';
     if ((n.touched || n.dirty) && n.errors) {

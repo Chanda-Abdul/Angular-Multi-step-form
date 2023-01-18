@@ -32,8 +32,8 @@ Users should be able to:
 <!-- TO DO => Bottom Bar Nav Buttons -->
 <!-- TO DO => Mobile Styles -->
 <!-- TO DO => Desktop Styles -->
-- [ ] Complete each step of the sequence
-- [ ] See a summary of their selections on the final step and confirm their order
+- [x] Complete each step of the sequence
+- [x] See a summary of their selections on the final step and confirm their order
 - [ ] View the optimal layout for the interface depending on their device's screen size
 - [ ] See hover and focus states for all interactive elements on the page
 
@@ -116,10 +116,10 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 
 ### Useful resources
-
+- [Split an Angular Reactive Form model into child components(Youtube)](https://youtu.be/2DOkiQFB5ic) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Material Button toggle](https://material.angular.io/components/button-toggle/overview) - This helped me for XYZ reason. I really liked this pattern and will use it going forward. `<mat-button-toggle>` are on/off toggles with the appearance of a button. 
 - [Material Checkbox](https://material.angular.io/components/checkbox/overview) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.`<mat-checkbox>` provides the same functionality as a native `<input type="checkbox">` enhanced with Material Design styling and animations.
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**

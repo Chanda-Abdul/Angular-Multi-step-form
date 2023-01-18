@@ -16,6 +16,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
+import {MatTableModule} from '@angular/material/table'
 import { StepOnePersonalDetailsComponent } from './components/form/form-steps/step-one-personal-details/step-one-personal-details.component';
 import { StepTwoPlanDetailsComponent } from './components/form/form-steps/step-two-plan-details/step-two-plan-details.component';
 import { StepThreeAddOnsComponent } from './components/form/form-steps/step-three-add-ons/step-three-add-ons.component';
@@ -43,7 +44,8 @@ import { StepFiveConfimComponent } from './components/form/form-steps/step-five-
     MatButtonToggleModule,
     MatCheckboxModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatTableModule
   ], providers: [],
   bootstrap: [AppComponent]
 })

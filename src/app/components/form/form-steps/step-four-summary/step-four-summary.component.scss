@@ -1,4 +1,51 @@
-ul{
+@use "/src/variables";
+
+// To-Do => update CSS!
+ul {
   list-style: none;
 
+}
+
+span {
+  display: contents;
+  color: variables.$purplish-blue;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0px;
+  // text-align: right;
+
+}
+
+table {
+  height: fit-content;
+  margin: 2rem auto;
+  padding: 1rem;
+  width: 100%;
+  background-color: variables.$alabaster;
+  border-radius: .5rem;
+}
+
+mat-divider {
+  color: variables.$cool-gray;
+  height: 2px;
+  width: 263px;
+  border-radius: 0px;
+  opacity: .2;
+
+}
+
+.mat-card-content {
+  height: fit-content;
+}
+
+th {
+  @include variables.flexCenter(column);
+  height: 3rem;
+}
+
+tr {
+  @include variables.flexCenter(row);
+  height: 1.5rem;
+  // width: 80%;
 }

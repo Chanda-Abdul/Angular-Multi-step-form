@@ -1,22 +1,24 @@
 @use "/src/variables";
-
+// To-Do => update CSS
 :host {
   background-color: variables.$light-blue;
   width: 100%;
-  height: calc(100vh - 250px);
   @include variables.flexCenter(column);
   margin: auto;
 
 }
 
+.container {
+  height: calc(100vh - 250px);
+}
 
 
 
 
 // bottom nav buttons
 .nav {
-position: fixed;
-bottom: 0;
+  position: fixed;
+  bottom: 0;
   width: 100%;
   height: 72px;
   @include variables.flexSpaceBetween(row);
@@ -38,4 +40,3 @@ bottom: 0;
 .btn-confirm {
   background-color: variables.$purplish-blue;
 }
-

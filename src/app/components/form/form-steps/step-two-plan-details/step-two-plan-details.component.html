@@ -1,38 +1,44 @@
-<mat-card class="step-two">
-  <mat-card-header>
-    <mat-card-title-group class="title">
-      <mat-card-title>Select your plan</mat-card-title>
-      <mat-card-subtitle>You have the option of monthly or yearly billing.</mat-card-subtitle>
-    </mat-card-title-group>
-  </mat-card-header>
-  <mat-card-content>
-    <!-- <form [formGroup]="planDetails"></form> -->
-    <mat-button-toggle-group name="options"
-                             aria-label="planOptions">
-      <mat-button-toggle *ngFor="let plan of planOptions[timeFrame]"
-                         [value]="plan"
-                         aria-pressed="false"
-                         (change)="setTotal(plan.addToTotal)">
-        <div class="plan">
-          <img mat-card-image
-               src="{{ plan.icon }}"
-               alt="plan-icon" />
-          <div class="details">
-            <h2>{{ plan.type }}</h2>
-            <h3>{{ plan.price }}</h3>
-            <p>{{ plan.promo }}</p>
-          </div>
-        </div>
-      </mat-button-toggle>
-    </mat-button-toggle-group>
-    <div class="toggle-area">
-      <div class="toggle">
-        <label>Monthly</label>
-        <mat-slide-toggle [checked]="false"
-                          (change)="isSlideChecked()"></mat-slide-toggle>
+<ng-container [formGroup]="stepForm">
+  <mat-card class="step-two">
+    <mat-card-header>
+      <mat-card-title-group class="title">
+        <mat-card-title>Select your plan</mat-card-title>
+        <mat-card-subtitle>You have the option of monthly or yearly billing.</mat-card-subtitle>
+      </mat-card-title-group>
+    </mat-card-header>
 
-        <label>Yearly</label>
+    <mat-card-content>
+      <mat-button-toggle-group name="options"
+                               aria-label="planOptions"
+                               [value]="planType">
+        <mat-button-toggle *ngFor="let plan of planOptions; let i = index"
+                           [attr.data-index]="i"
+                           [value]="plan.plan"
+                           aria-pressed="false"
+                           (change)="updatePlanType(plan.plan, plan.duration[timeFrame].addToTotal)">
+
+          <div class="plan">
+            <img mat-card-image
+                 src="{{ plan.icon }}"
+                 alt="plan-icon" />
+            <div class="details">
+              <h2>{{plan.plan | titlecase}}</h2>
+              <h3>{{ plan.duration[timeFrame].price }}</h3>
+              <p>{{ plan.duration[timeFrame].promo }}</p>
+            </div>
+          </div>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+      
+      <div class="toggle-area">
+        <div class="toggle">
+          <label>Monthly</label>
+          <mat-slide-toggle [checked]="false"
+                            (change)="toggleDuration()">
+          </mat-slide-toggle>
+          <label>Yearly</label>
+        </div>
       </div>
-    </div>
-  </mat-card-content>
-</mat-card>
+    </mat-card-content>
+  </mat-card>
+</ng-container>

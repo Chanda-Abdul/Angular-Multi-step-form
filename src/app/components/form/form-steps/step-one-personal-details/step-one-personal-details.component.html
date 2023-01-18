@@ -1,43 +1,41 @@
-<!-- Step 1 start -->
-<mat-card class="step-one">
-  <mat-card-header>
-    <mat-card-title-group class="title">
-      <mat-card-title>Personal info</mat-card-title>
-      <mat-card-subtitle>Please provide your name, email address, and phone number.</mat-card-subtitle>
-    </mat-card-title-group>
-  </mat-card-header>
-  <mat-card-content class="form-controls">
-  <!-- <form [formGroup]="personalDetails"> -->
-<label for="name">Name</label>
-<input type="text"
-    name="name"
-    placeholder="e.g. Stephen King"
-    formControlName="name" />
-<label for="email">Email Address</label>
-<input type="text"
-    name="email"
-    placeholder="e.g. stephenking@lorem.com"
-    formControlName="email"
-    required>
-<label for="phone">Phone Number</label>
-<input type="text"
-    name="phone"
-    placeholder="e.g. +1 234 567 890"
-    formControlName="phone"
-    required>
-<!-- </form> -->
-</mat-card-content>
-</mat-card>
-<!--
-
-
-
-
-
- -->
-<!-- [ngClass]="{'alert-danger': nameValidationErrorMessage }"
+<ng-container [formGroup]="stepForm">
+  <mat-card class="step-one">
+    <mat-card-header>
+      <mat-card-title-group class="title">
+        <mat-card-title>Personal info</mat-card-title>
+        <mat-card-subtitle>Please provide your name, email address, and phone number.</mat-card-subtitle>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content class="form-controls">
+      <mat-form-field>
+        <mat-label for="name">Name</mat-label>
+        <input type="text"
+               name="name"
+               placeholder="e.g. Stephen King"
+               formControlName="name" /> </mat-form-field>
+      <!-- To-Do => form input validation stylin and functionality -->
+      <!-- [ngClass]="{'alert-danger': nameValidationErrorMessage }"
 -->
 
-<!-- <span class="alert-danger">{{nameValidationErrorMessage}}</span> -->
-
-<!-- Step 1 end -->
+      <!-- <span class="alert-danger">{{nameValidationErrorMessage}}</span> -->
+      <mat-form-field>
+        <mat-label for="email">Email Address</mat-label>
+        <input type="text"
+               name="email"
+               placeholder="e.g. stephenking@lorem.com"
+               formControlName="email"
+               required>
+      </mat-form-field>
+      <!-- To-Do => form input validation stylin and functionality -->
+      <mat-form-field>
+        <mat-label for="phone">Phone Number</mat-label>
+        <input type="text"
+               name="phone"
+               placeholder="e.g. +1 234 567 890"
+               formControlName="phone"
+               required>
+      </mat-form-field>
+      <!-- To-Do => form input validation stylin and functionality -->
+    </mat-card-content>
+  </mat-card>
+</ng-container>

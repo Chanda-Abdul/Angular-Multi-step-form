@@ -1,28 +1,26 @@
+<app-step-nav (step)="stepChanged">
+
+</app-step-nav>
 <div class="container">
 
-  <ng-container *ngIf="activeStep === 1">
-    <app-step-one-personal-details></app-step-one-personal-details>
+  <ng-container [formGroup]="stepForm" name="stepForm"
+        (submit)="confirmAndSubmitForm()">
+
+    <app-step-one-personal-details *ngIf="activeStep == 1"
+                                   formGroupName="personalDetails"></app-step-one-personal-details>
+    <app-step-two-plan-details *ngIf="activeStep == 2"
+                               formGroupName="planDetails"></app-step-two-plan-details>
+    <app-step-three-add-ons *ngIf="activeStep == 3"
+                            formGroupName="addOnDetails"></app-step-three-add-ons>
+    <app-step-four-summary *ngIf="activeStep == 4"
+                           [stepForm]="stepForm"></app-step-four-summary>
+
+    <app-step-five-confim *ngIf="activeStep == 5"></app-step-five-confim>
+    <!-- <pre style="margin-top: 50px; border: 1px solid red;width: fit-content;">
+  {{this.stepForm.value |json}}
+</pre> -->
   </ng-container>
-  <ng-container *ngIf="activeStep === 2">
-    <app-step-two-plan-details></app-step-two-plan-details> </ng-container>
-  <ng-container *ngIf="activeStep === 3">
-    <app-step-three-add-ons></app-step-three-add-ons> </ng-container>
-  <ng-container *ngIf="activeStep === 4">
-    <app-step-four-summary></app-step-four-summary> </ng-container>
-  <ng-container *ngIf="activeStep === 5">
-    <app-step-five-confim></app-step-five-confim> </ng-container>
-  <!-- <form novalidate
-        name="stepForm"
-        (submit)="confirmAndSubmitForm()"> -->
 
-  <!-- [formGroup]="stepForm" -->
-
-
-
-
-
-
-  <!-- </form> -->
   <div class="nav">
     <a *ngIf="activeStep > 1"
        (click)="goBack()">Go Back</a>
@@ -31,7 +29,8 @@
             (click)="nextStep()">Next Step</button>
     <button class="btn btn-confirm"
             *ngIf="activeStep === 5"
-            (click)="confirmAndSubmitForm()">Confirm</button>
+            (click)="confirmAndSubmitForm()"type="button"
+              [disabled]="!stepForm.valid">Confirm</button>
 
   </div>
   <div class="attribution">
@@ -44,8 +43,7 @@
 
 
 
-<!-- <button type="button"
-              [disabled]="!stepForm.valid">Submit</button> -->
+
 
 
 
