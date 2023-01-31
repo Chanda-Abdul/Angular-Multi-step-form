@@ -19,7 +19,7 @@ span {
 
 table {
   height: fit-content;
-  margin: 2rem auto;
+  margin: 2rem auto 1.5rem auto;
   padding: 1rem;
   width: 100%;
   background-color: variables.$alabaster;
@@ -29,7 +29,7 @@ table {
 mat-divider {
   color: variables.$cool-gray;
   height: 2px;
-  width: 263px;
+  width: 100%;
   border-radius: 0px;
   opacity: .2;
 
@@ -42,10 +42,99 @@ mat-divider {
 th {
   @include variables.flexCenter(column);
   height: 3rem;
+  width: 100%;
 }
 
 tr {
-  @include variables.flexCenter(row);
-  height: 1.5rem;
-  // width: 80%;
+  @include variables.flexSpaceBetween(row);
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+}
+
+.type {
+  @include variables.flexSpaceBetween(column);
+  align-items: flex-start;
+  height: 39px;
+  @include variables.body-primary-xs;
+  letter-spacing: 0;
+  color: variables.$marine-blue;
+
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  color: variables.$cool-gray;
+  text-decoration-line: underline;
+  @include variables.body-primary-s;
+  letter-spacing: 0;
+}
+
+.cost {
+  @include variables.heading-m;
+  font-size: 0.875rem;
+}
+
+.service,
+.service_cost {
+  margin-top: 0.75rem;
+  color: variables.$cool-gray;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  letter-spacing: 0;
+}
+
+.service_cost {
+  color: variables.$marine-blue;
+}
+
+.total {
+  padding: 0 1rem;
+  @include variables.flexSpaceBetween(row);
+  color: variables.$cool-gray;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+
+}
+
+.total .cost {
+  color: variables.$purplish-blue;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+
+@media (min-width: 600px) {
+th{
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+  .type {
+    // @include variables.flexSpaceBetween(column);
+    // align-items: flex-start;
+    height: auto;
+    // @include variables.body-primary-xs;
+    // letter-spacing: 0;
+    // padding-bottom: 27px;
+  }
+
+  button {
+    margin-top: 7px;
+
+    //   border: none;
+    //   background-color: transparent;
+    //   color: variables.$cool-gray;
+    //   text-decoration-line: underline;
+    //   @include variables.body-primary-s;
+    //   letter-spacing: 0;
+    padding-left: 0;
+  }
+
+  tr {
+  padding-bottom: 1.5rem;
+  }
+
 }

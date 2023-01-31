@@ -1,0 +1,104 @@
+@use '/src/variables';
+
+.addon-section {
+  @include variables.flexSpaceBetween(column);
+  margin: 6px 0 .75rem 0;
+
+}
+span {
+  display: block;
+}
+
+.addOn {
+  @include variables.flexSpaceBetween(row);
+  width: 230px;
+}
+
+.details {
+  @include variables.flexSpaceBetween(column);
+  width: 100%;
+  align-items: baseline;
+  justify-content: space-evenly;
+  height: 39px;
+}
+
+mat-checkbox {
+  color: variables.$purplish-blue;
+  @include variables.flexSpaceBetween(row);
+  border: 1px solid variables.$light-gray;
+  height: 62px;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem 0.5rem 0;
+  width: 295px;
+}
+
+.addon_title {
+
+  @include variables.body-primary-s;
+  color: variables.$marine-blue; 
+
+}
+
+.addon_desc {
+  @include variables.body-secondary-s;
+  color: variables.$cool-gray;
+  padding-top: .25rem;
+}
+
+.addon_price {
+  @include variables.body-secondary-s;
+  color: variables.$purplish-blue;
+}
+
+label {
+  margin-bottom: 0 !important;
+  padding: 0;
+}
+
+mat-button-toggle-checked,
+mat-mdc-checkbox-checked {
+  border: 1px solid variables.$purplish-blue;
+  background-color: variables.$magnolia;
+}
+
+
+@media (min-width: 600px) {
+  .column {
+    width: 450px;
+    padding-right: 100px;
+  }
+  mat-checkbox {
+    width: 450px;
+    height: 81px;
+    padding-right: 0.5rem 2rem 0.5rem 1rem;
+  }
+
+  .addOn {
+    padding-left: .5rem;
+    padding-top: 10px;
+    width: calc(450px - 68px);
+
+  }
+
+  .details {
+    @include variables.flexSpaceBetween(column);
+    width: 200px;
+    align-items: baseline;
+    justify-content: space-evenly;
+    height: 45px;
+  }
+
+  .addon_title {
+    font-size: 1rem;
+    line-height: 1.1rem;
+
+
+  }
+
+  .addon_desc,
+  .addon_price {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}

@@ -16,12 +16,14 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
-import {MatTableModule} from '@angular/material/table'
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
 import { StepOnePersonalDetailsComponent } from './components/form/form-steps/step-one-personal-details/step-one-personal-details.component';
 import { StepTwoPlanDetailsComponent } from './components/form/form-steps/step-two-plan-details/step-two-plan-details.component';
 import { StepThreeAddOnsComponent } from './components/form/form-steps/step-three-add-ons/step-three-add-ons.component';
 import { StepFourSummaryComponent } from './components/form/form-steps/step-four-summary/step-four-summary.component';
 import { StepFiveConfimComponent } from './components/form/form-steps/step-five-confim/step-five-confim.component';
+import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,8 +47,13 @@ import { StepFiveConfimComponent } from './components/form/form-steps/step-five-
     MatCheckboxModule,
     MatCardModule,
     MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatTableModule
-  ], providers: [],
+  ],
+  providers: [
+    { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

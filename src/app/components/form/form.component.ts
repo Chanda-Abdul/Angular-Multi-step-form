@@ -13,7 +13,7 @@ export class FormComponent implements OnInit {
 
   stepForm!: FormGroup;
 // To-Do => add step observable form service
-  activeStep: number = 1;
+  activeStep: number =1;
   // TO-Do => fix step emitter
   @Output() stepChanged: EventEmitter<number> = new EventEmitter<number>();
 
@@ -37,6 +37,8 @@ export class FormComponent implements OnInit {
 
   confirmAndSubmitForm() {
     this.formService.submit();
+    this.stepChanged.emit(this.activeStep++);
+    // To-Do => add Timeout
   }
 }
 

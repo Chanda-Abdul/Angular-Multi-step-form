@@ -2,12 +2,12 @@
   <mat-card class="step-two">
     <mat-card-header>
       <mat-card-title-group class="title">
-        <mat-card-title>Select your plan</mat-card-title>
+        <mat-card-title class="select">Select your plan</mat-card-title>
         <mat-card-subtitle>You have the option of monthly or yearly billing.</mat-card-subtitle>
       </mat-card-title-group>
     </mat-card-header>
-
     <mat-card-content>
+      <!-- TO-DO => toggle select -->
       <mat-button-toggle-group name="options"
                                aria-label="planOptions"
                                [value]="planType">
@@ -22,21 +22,21 @@
                  src="{{ plan.icon }}"
                  alt="plan-icon" />
             <div class="details">
-              <h2>{{plan.plan | titlecase}}</h2>
-              <h3>{{ plan.duration[timeFrame].price }}</h3>
-              <p>{{ plan.duration[timeFrame].promo }}</p>
+              <span class="plan_title">{{plan.plan | titlecase}}</span>
+              <span class="price">{{ plan.duration[timeFrame].price }}</span>
+              <span class="promo">{{ plan.duration[timeFrame].promo }}</span>
             </div>
           </div>
         </mat-button-toggle>
       </mat-button-toggle-group>
-      
+
       <div class="toggle-area">
         <div class="toggle">
-          <label>Monthly</label>
-          <mat-slide-toggle [checked]="false"
+          <label [ngClass]="{'checked':checked}" >Monthly</label>
+          <mat-slide-toggle [checked]="checked"
                             (change)="toggleDuration()">
           </mat-slide-toggle>
-          <label>Yearly</label>
+          <label [ngClass]="{'checked':!checked}">Yearly</label>
         </div>
       </div>
     </mat-card-content>

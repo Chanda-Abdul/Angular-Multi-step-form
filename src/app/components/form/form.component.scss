@@ -1,42 +1,83 @@
 @use "/src/variables";
-// To-Do => update CSS
+
 :host {
-  background-color: variables.$light-blue;
   width: 100%;
-  @include variables.flexCenter(column);
-  margin: auto;
-
 }
 
-.container {
-  height: calc(100vh - 250px);
-}
+@media (max-width: 600px) {
+  .container {
+    min-height: calc(100vh - 250px);
+  }
 
-
-
-
-// bottom nav buttons
-.nav {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 72px;
-  @include variables.flexSpaceBetween(row);
-  padding: 1rem 2rem;
-  // position: static;
-  // z-index: 5;
-}
-
-.attribution {
-  display: none;
+  .progress {
+    display: none;
+  }
 }
 
 
-.btn-next,
-.btn-confirm {
-  margin: 1rem 1rem 1rem auto;
+form {
+  height: fit-content;
 }
 
-.btn-confirm {
-  background-color: variables.$purplish-blue;
+form label {
+  margin-bottom: .25rem !important;
+  padding-block-end: 0.25rem;
+}
+
+// .attribution {
+//   display: none;
+// }
+
+@media (min-width: 600px) {
+
+  :host {
+    @include variables.flexCenter(column);
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .nav {
+    position: relative;
+  }
+
+  .container {
+    background: variables.$white;
+    box-shadow: 0px 25px 40px -20px rgba(0, 0, 0, 0.0951141);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: auto auto;
+    @include variables.flexSpaceBetween(row);
+    height: 600px;
+    width: 940px;
+  }
+
+  .row {
+    @include variables.flexSpaceBetween(row);
+    width: 100%;
+
+  }
+
+  .column {
+    width: 650px;
+    @include variables.flexSpaceBetween(column);
+    height: 568px;
+    padding-top: 56px;
+    padding-bottom: 2rem;
+  }
+
+  form {
+    background-color: variables.$white;
+    border-radius: .25rem;
+    @include variables.flexSpaceBetween(column);
+    align-items: baseline;
+  }
+
+  .progress {
+    display: block;
+  }
+
+  app-progress-nav {
+    position: relative;
+  }
+
 }

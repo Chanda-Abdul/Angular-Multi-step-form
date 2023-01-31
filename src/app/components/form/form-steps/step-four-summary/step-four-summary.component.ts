@@ -19,6 +19,7 @@ export class StepFourSummaryComponent  implements OnInit{
 // @Input() phone: string = '';
 constructor(  private rootFormGroup: FormGroupDirective) { }
 ngOnInit(): void{
+  console.log(this.planDetails.duration  === 'monthly' ? 'mo' : 'yr')
   console.log(this.personalDetails.name,this.planDetails, this.addOnDetails.service)
 }
 }

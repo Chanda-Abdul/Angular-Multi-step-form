@@ -6,20 +6,17 @@
   bottom: 0;
 }
 
-.nav {
-
+.container {
   width: 100%;
-  height: 72px;
+  height: auto;
   @include variables.flexSpaceBetween(row);
   padding: 1rem 2rem;
-  // position: static;
-  // z-index: 5;
+
 }
 
 .attribution {
   display: none;
 }
-
 
 .btn-next,
 .btn-confirm {
@@ -28,4 +25,20 @@
 
 .btn-confirm {
   background-color: variables.$purplish-blue;
+}
+
+@media (min-width: 600px) {
+  :host {
+    width: 450px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0;
+  }
+
+  .btn-next,
+  .btn-confirm {
+    margin: 0 0 0 auto;
+  }
 }

@@ -7,34 +7,42 @@
       </mat-card-title-group>
     </mat-card-header>
     <mat-card-content class="form-controls">
-      <mat-form-field>
-        <mat-label for="name">Name</mat-label>
+      <label for="name">Name</label>
+
         <input type="text"
-               name="name"
-               placeholder="e.g. Stephen King"
-               formControlName="name" /> </mat-form-field>
+               matInput
+               formControlName="name"
+               placeholder="e.g. Stephen King" />
       <!-- To-Do => form input validation stylin and functionality -->
-      <!-- [ngClass]="{'alert-danger': nameValidationErrorMessage }"
+      <!-- [formControl]="stepForm.personalDetails.nameFormControl"
+               [errorStateMatcher]="matcher"[ngClass]="{'alert-danger': nameValidationErrorMessage }"
 -->
 
-      <!-- <span class="alert-danger">{{nameValidationErrorMessage}}</span> -->
-      <mat-form-field>
-        <mat-label for="email">Email Address</mat-label>
+      <!-- <span class="al             ert-danger">{{nameValidationErrorMessage}}</span> -->
+  <mat-hint>{{nameValidationErrorMessage}}</mat-hint>
+      <!-- <mat-error *ngIf="nameFormControl.hasError('minlength') && !nameFormControl.hasError('name')">
+        {{nameValidationErrorMessage['minlength']}}
+      </mat-error>
+      <mat-error *ngIf="nameFormControl.hasError('required')">
+        {{nameValidationErrorMessage['required']}}
+      </mat-error> -->
+
+        <label for="email">Email Address</label>
         <input type="text"
                name="email"
                placeholder="e.g. stephenking@lorem.com"
                formControlName="email"
                required>
-      </mat-form-field>
+
       <!-- To-Do => form input validation stylin and functionality -->
-      <mat-form-field>
-        <mat-label for="phone">Phone Number</mat-label>
+
+        <label for="phone">Phone Number</label>
         <input type="text"
                name="phone"
                placeholder="e.g. +1 234 567 890"
                formControlName="phone"
                required>
-      </mat-form-field>
+ 
       <!-- To-Do => form input validation stylin and functionality -->
     </mat-card-content>
   </mat-card>

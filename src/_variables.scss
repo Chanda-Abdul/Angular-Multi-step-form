@@ -5,7 +5,6 @@ $global-font: 'Ubuntu', sans-serif;
 
 /* Primary Colors */
 $marine-blue: hsl(213, 96%, 18%);
-// $denim: #022959;
 $purplish-blue: hsl(243, 100%, 62%);
 $pastel-blue: hsl(228, 100%, 84%);
 $light-blue: hsl(206, 94%, 87%);
@@ -14,7 +13,6 @@ $strawberry-red: hsl(354, 84%, 57%);
 /* Neutral Colors */
 $cool-gray: hsl(231, 11%, 63%);
 $light-gray: hsl(229, 24%, 87%);
-// $very-light-gray: 	hsl(231, 100%, 99%);
 $magnolia: hsl(217, 100%, 97%);
 $alabaster: hsl(231, 100%, 99%);
 $white: hsl(0, 0%, 100%);
@@ -22,39 +20,45 @@ $white: hsl(0, 0%, 100%);
 
 /* Typography */
 @mixin heading-m {
-font-size: 1.5rem;
-font-weight: 700;
-line-height: 1.75rem;
-letter-spacing: 0px;
-text-align: left;
-color: $marine-blue;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  letter-spacing: 0px;
+  text-align: left;
+  color: $marine-blue;
 }
+
 @mixin body-primary-l {
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5rem;
   color: $cool-gray;
 }
+
+@mixin body-primary-m {
+  font-weight: 400;
+  font-size: .875rem;
+  line-height: 1rem;
+}
 @mixin body-primary-s {
-  font-weight: 700;
+  font-weight: 500;
   font-size: .875rem;
   line-height: 1rem;
   letter-spacing: 1px;
 }
+
 @mixin body-primary-xs {
-  // font-family: $global-font;
   font-weight: 500;
   font-size: 1rem;
   line-height: 1.1rem;
-  // color: $cool-gray;
 }
+
 @mixin body-secondary-s {
   font-weight: 400;
   font-size: .75rem;
   line-height: 1.1rem;
   color: $marine-blue;
 }
-
 
 
 /* Flex */

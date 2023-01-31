@@ -1,82 +1,111 @@
-@use '/src/variables';
+@use "/src/variables";
 
+@media (max-width: 600px) {
 
-:host {
-  width: 100vw;
-  height: 11rem;
-  position: relative;
-  background-color: variables.$purplish-blue;
-  background: url('/assets/images/bg-sidebar-mobile.svg') top left;
-  background-size: cover;
-  @include variables.flexCenter(column);
-  justify-content: flex-start;
+  // .nav {
+  //   margin-top: 1rem;
+  //   position: fixed;
+  //   bottom: 0;
+  //   width: 100%;
+  //   height: 72px;
+  //   @include variables.flexSpaceBetween(row);
+  //   padding-left: 1rem;
+  //   background-color: variables.$white;
+  // }
+  :host {
+    width: 100vw;
+    height: 11rem;
+    position: relative;
+    @include variables.flexCenter(column);
+    justify-content: flex-start;
+    background-color: variables.$purplish-blue;
+    background: url("/assets/images/bg-sidebar-mobile.svg") top left;
+    background-size: cover;
+  }
+
+  .step-display {
+    @include variables.flexSpaceBetween(row);
+    @include variables.body-primary-s;
+    width: 11rem;
+    color: variables.$white;
+    height: 100px;
+  }
 }
 
-.step-display {
-  @include variables.flexSpaceBetween(row);
-  width: 11rem;
-  color: variables.$white;
-  height: 100px;
-}
-
-.step {
+.step_number {
+  @include variables.body-primary-s();
   width: 2rem;
   height: 2rem;
   border: 1px solid variables.$white;
+  color: variables.$white;
   border-radius: 50%;
   @include variables.flexCenter(column);
-
-  // * {
-  //   @include variables.body-primary-s();
-  // }
-
-
-
 }
-
-// h2 {
-//   @include variables.body-primary-s();
-// }
-
-h3 {
-  display: none;
-}
-
-.selected {
+.step_number.selected {
   background-color: variables.$light-blue;
   color: variables.$purplish-blue;
   border: none;
 }
 
-@media (min-width: 600px) {
-  :host {
-    background: url('/assets/images/bg-sidebar-desktop.svg');
-
-  }
-
-  h3 {
-    display: contents;
-  }
+.step_details {
+  display: none;
 }
 
+@media (min-width: 600px) {
+  :host {
+    height: 568px;
+    width: 274px;
 
+    border-radius: 10px;
 
-// .step-display::before {
-//   content: "";
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   // height: 100%;
-//   // width: 100%;
+    // position: relative;
+    @include variables.flexCenter(column);
+    justify-content: flex-start;
+    align-items: baseline;
+    background-color: variables.$purplish-blue;
+    background: url("/assets/images/bg-sidebar-desktop.svg");
+    // background-size:100%;
+    padding-top: 40px;
+    padding-left: 2rem;
+  }
 
+  .step_title {
+    // display: inline-block;
+    margin-bottom: 0.25rem;
+    @include variables.body-secondary-s;
+    line-height: 0.875rem;
+    color: variables.$light-blue;
+  }
 
-//   z-index: -1;
-// }
+  .step_description {
+    // display: inline-block;
+    @include variables.body-primary-s;
+    font-weight: 700;
+    color: variables.$white;
+    text-transform: uppercase;
+  }
 
-// h2 {
-//   height: 2rem;
-//   width: 2rem;
-//   border: 1px solid #FFFFFF;
-//   border-radius: 50%;
-//   text-align: center;
-// }
+  .step-display {
+    height: 228px;
+    width: 153px;
+    @include variables.flexSpaceBetween(column);
+    justify-content: flex-start;
+  }
+
+  .step {
+    width: 135px;
+    height: 2rem;
+    // border: 1px solid variables.$white;
+    // border-radius: 50%;
+    @include variables.flexSpaceBetween(row);
+
+    margin-bottom: 2rem;
+  }
+
+  .step_details {
+    display: contents;
+    @include variables.flexSpaceBetween(column);
+    width: 86px;
+    align-items: baseline;
+  }
+}

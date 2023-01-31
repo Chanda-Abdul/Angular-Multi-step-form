@@ -1,61 +1,37 @@
-<app-step-nav (step)="stepChanged">
-
-</app-step-nav>
 <div class="container">
+  <div class="row">
+    <app-step-nav (step)="stepChanged"
+                  class="nav"> </app-step-nav>
+    <div class="column">
+      <form>
+        <ng-container [formGroup]="stepForm"
+                      name="stepForm"
+                      (submit)="confirmAndSubmitForm()">
 
-  <ng-container [formGroup]="stepForm" name="stepForm"
-        (submit)="confirmAndSubmitForm()">
+          <app-step-one-personal-details *ngIf="activeStep == 1"
+                                         formGroupName="personalDetails"></app-step-one-personal-details>
+          <app-step-two-plan-details *ngIf="activeStep == 2"
+                                     formGroupName="planDetails"></app-step-two-plan-details>
+          <app-step-three-add-ons *ngIf="activeStep == 3"
+                                  formGroupName="addOnDetails"></app-step-three-add-ons>
+          <app-step-four-summary *ngIf="activeStep == 4"
+                                 [stepForm]="stepForm"></app-step-four-summary>
 
-    <app-step-one-personal-details *ngIf="activeStep == 1"
-                                   formGroupName="personalDetails"></app-step-one-personal-details>
-    <app-step-two-plan-details *ngIf="activeStep == 2"
-                               formGroupName="planDetails"></app-step-two-plan-details>
-    <app-step-three-add-ons *ngIf="activeStep == 3"
-                            formGroupName="addOnDetails"></app-step-three-add-ons>
-    <app-step-four-summary *ngIf="activeStep == 4"
-                           [stepForm]="stepForm"></app-step-four-summary>
-
-    <app-step-five-confim *ngIf="activeStep == 5"></app-step-five-confim>
-    <!-- <pre style="margin-top: 50px; border: 1px solid red;width: fit-content;">
+          <app-step-five-confim *ngIf="activeStep == 5"></app-step-five-confim>
+          <!-- <pre style="margin-top: 50px; border: 1px solid red;width: fit-content;">
   {{this.stepForm.value |json}}
 </pre> -->
-  </ng-container>
+        </ng-container>
 
-  <div class="nav">
-    <a *ngIf="activeStep > 1"
-       (click)="goBack()">Go Back</a>
-    <button class="btn btn-next"
-            *ngIf="activeStep !== 5"
-            (click)="nextStep()">Next Step</button>
-    <button class="btn btn-confirm"
-            *ngIf="activeStep === 5"
-            (click)="confirmAndSubmitForm()"type="button"
-              [disabled]="!stepForm.valid">Confirm</button>
+      </form>
+      <app-progress-nav class="progress"></app-progress-nav>
+    </div>
+  </div>
 
-  </div>
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge"
-       target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Chanda Abdul</a>.
-  </div>
+
+
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

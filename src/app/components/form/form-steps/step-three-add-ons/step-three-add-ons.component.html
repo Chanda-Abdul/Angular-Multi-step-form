@@ -13,10 +13,10 @@
                     (change)="updateAddOns($event, addOn.formName)">
         <div class="addOn">
           <div class="details">
-            <h2>{{addOn.addOn}} </h2>
-            <h3>{{addOn.desc}} </h3>
+            <span class="addon_title">{{addOn.addOn}} </span>
+            <span class="addon_desc">{{addOn.desc}} </span>
           </div>
-          <h4>{{addOn.timeFrame[timeFrame].price}}</h4>
+          <span class="addon_price">{{addOn.timeFrame[timeFrame].price}}</span>
         </div>
       </mat-checkbox>
     </mat-card-content>

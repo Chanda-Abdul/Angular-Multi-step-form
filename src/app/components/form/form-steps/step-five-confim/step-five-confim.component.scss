@@ -1,0 +1,20 @@
+@use "/src/variables";
+
+mat-card, mat-card-title, mat-card-content {
+  @include variables.flexCenter(column);
+  text-align: center;
+}
+
+.confirm {
+  padding: 79px 1.5rem;
+
+}
+
+mat-card-title {
+  margin-top: 1.5rem;
+}
+
+p {
+  margin: 9px 0 6rem 0;
+  line-height: 25px;
+}
