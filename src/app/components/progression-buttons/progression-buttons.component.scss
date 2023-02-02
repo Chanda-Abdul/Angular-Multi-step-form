@@ -27,6 +27,7 @@
   background-color: variables.$purplish-blue;
 }
 
+.btn-next:disabled,
 .btn-confirm:disabled{
   background-color: variables.$light-gray;
 }

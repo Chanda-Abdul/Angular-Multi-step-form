@@ -2,7 +2,7 @@
   <a *ngIf="activeStep$ > 1 && activeStep$ < 5"
      (click)="goBack()">Go Back</a>
   <button class="btn btn-next"
-          *ngIf="activeStep$ < 4"
+          *ngIf="activeStep$ < 4" [disabled]="stepForm.controls['personalDetails'].valid === false"
           (click)="nextStep()">Next Step</button>
   <button class="btn btn-confirm"
           *ngIf="activeStep$ === 4"[disabled]="!stepForm.valid"
