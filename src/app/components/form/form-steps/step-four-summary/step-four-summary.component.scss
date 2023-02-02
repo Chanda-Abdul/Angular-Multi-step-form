@@ -3,7 +3,7 @@
 
 span {
   display: contents;
-  color: variables.$purplish-blue;
+  color: variables.$shady-neon-blue;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.25rem;
@@ -16,12 +16,12 @@ table {
   margin: 2rem auto 1.5rem auto;
   padding: 1rem;
   width: 18.4rem;
-  background-color: variables.$alabaster;
+  background-color: variables.$wash-me;
   border-radius: .5rem;
 }
 
 mat-divider {
-  color: variables.$cool-gray;
+  color: variables.$bright-manatee;
   height: 0.125rem;
   width: 100%;
   border-radius: 0;
@@ -52,14 +52,14 @@ tr {
   height: 2.438rem;
   @include variables.body-primary-xs;
   letter-spacing: 0;
-  color: variables.$marine-blue;
+  color: variables.$sub-nautical;
 
 }
 
 button {
   border: none;
   background-color: transparent;
-  color: variables.$cool-gray;
+  color: variables.$bright-manatee;
   text-decoration-line: underline;
   @include variables.body-primary-s;
   letter-spacing: 0;
@@ -74,7 +74,7 @@ button {
 .service,
 .service_cost {
   margin-top: 0.75rem;
-  color: variables.$cool-gray;
+  color: variables.$bright-manatee;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.25rem;
@@ -82,13 +82,13 @@ button {
 }
 
 .service_cost {
-  color: variables.$marine-blue;
+  color: variables.$sub-nautical;
 }
 
 .total {
   padding: 0 1rem;
   @include variables.flexSpaceBetween(row);
-  color: variables.$cool-gray;
+  color: variables.$bright-manatee;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.25rem;
@@ -96,7 +96,7 @@ button {
 }
 
 .total .cost {
-  color: variables.$purplish-blue;
+  color: variables.$shady-neon-blue;
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.25rem;

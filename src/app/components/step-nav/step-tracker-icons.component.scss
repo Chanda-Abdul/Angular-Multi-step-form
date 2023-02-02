@@ -7,7 +7,7 @@
     top: -1rem;
     @include variables.flexCenter(column);
     justify-content: flex-start;
-    background-color: variables.$purplish-blue;
+    background-color: variables.$shady-neon-blue;
     background: url("/assets/images/bg-sidebar-mobile.svg") top left;
     background-size: cover;
   }
@@ -16,7 +16,7 @@
     @include variables.flexSpaceBetween(row);
     @include variables.body-primary-s;
     width: 11.25rem;
-    color: variables.$white;
+    color: variables.$bright-white;
     height: 6.25rem;
   }
 
@@ -25,14 +25,14 @@
   @include variables.body-primary-s();
   width: 2rem;
   height: 2rem;
-  border: 0.063rem solid variables.$white;
-  color: variables.$white;
+  border: 0.063rem solid variables.$bright-white;
+  color: variables.$bright-white;
   border-radius: 50%;
   @include variables.flexCenter(column);
 }
 .step_number.selected {
-  background-color: variables.$light-blue;
-  color: variables.$purplish-blue;
+  background-color: variables.$dithered-sky;
+  color: variables.$shady-neon-blue;
   border: none;
 }
 
@@ -49,7 +49,7 @@
     @include variables.flexCenter(column);
     justify-content: flex-start;
     align-items: baseline;
-    background-color: variables.$purplish-blue;
+    background-color: variables.$shady-neon-blue;
     background: url("/assets/images/bg-sidebar-desktop.svg");
     padding-top: 2.5rem;
     padding-left: 2rem;
@@ -59,13 +59,13 @@
     margin-bottom: 0.25rem;
     @include variables.body-secondary-s;
     line-height: 0.875rem;
-    color: variables.$light-blue;
+    color: variables.$dithered-sky;
   }
 
   .step_description {
     @include variables.body-primary-s;
     font-weight: 700;
-    color: variables.$white;
+    color: variables.$bright-white;
     text-transform: uppercase;
   }
 

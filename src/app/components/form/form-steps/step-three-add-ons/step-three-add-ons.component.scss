@@ -24,9 +24,9 @@ span {
 }
 
 mat-checkbox {
-  color: variables.$purplish-blue;
+  color: variables.$shady-neon-blue;
   @include variables.flexSpaceBetween(row);
-  border: 0.063rem solid variables.$light-gray;
+  border: 0.063rem solid variables.$delicate-lilac-crystal;
   height: 3.875rem;
   border-radius: 0.5rem;
   margin: 0.5rem 0;
@@ -38,44 +38,44 @@ mat-checkbox {
 // TO-DO => change mat-checkbox styles
 mat-button-toggle-checked,
 mat-mdc-checkbox-checked {
-  border: 0.063rem solid variables.$purplish-blue;
-  background-color: variables.$magnolia;
+  border: 0.063rem solid variables.$shady-neon-blue;
+  background-color: variables.$cotton-ball;
 }
 
 ::ng-deep .mat-checkbox-checked.mat-accent {
   .mat-checkbox-ripple .mat-ripple-element {
-    background-color: variables.$purplish-blue !important;
-    border-color: variables.$purplish-blue !important;
+    background-color: variables.$shady-neon-blue !important;
+    border-color: variables.$shady-neon-blue !important;
   }
 
   .mat-checkbox-background,
   .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
-    background-color: variables.$purplish-blue !important;
-    border-color: variables.$purplish-blue !important;
+    background-color: variables.$shady-neon-blue !important;
+    border-color: variables.$shady-neon-blue !important;
   }
 }
 
 ::ng-deep .mat-checkbox.mat-accent {
   .mat-checkbox-ripple .mat-ripple-element {
-    background-color: variables.$purplish-blue !important;
-    border-color: variables.$purplish-blue !important;
+    background-color: variables.$shady-neon-blue !important;
+    border-color: variables.$shady-neon-blue !important;
   }
 }
 
 .addon_title {
   @include variables.body-primary-s;
-  color: variables.$marine-blue;
+  color: variables.$sub-nautical;
 }
 
 .addon_desc {
   @include variables.body-secondary-s;
-  color: variables.$cool-gray;
+  color: variables.$bright-manatee;
   padding-top: .25rem;
 }
 
 .addon_price {
   @include variables.body-secondary-s;
-  color: variables.$purplish-blue;
+  color: variables.$shady-neon-blue;
 }
 
 label {

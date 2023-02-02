@@ -19,6 +19,7 @@ export class ProgressButtonComponent implements OnInit {
     this.formService.activeStep$.subscribe(
       step => this.activeStep$ = step
     );
+    console.log(this.stepForm.controls['personalDetails'].valid)
 
 
   }

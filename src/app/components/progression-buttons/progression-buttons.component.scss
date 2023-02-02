@@ -5,7 +5,7 @@
   width: 100%;
   position: fixed;
   bottom: 0;
-  background-color: variables.$white;
+  background-color: variables.$bright-white;
 }
 
 .container {
@@ -24,13 +24,14 @@
 }
 
 .btn-confirm {
-  background-color: variables.$purplish-blue;
+  background-color: variables.$shady-neon-blue;
 }
 
-.btn-next:disabled,
-.btn-confirm:disabled{
-  background-color: variables.$light-gray;
+
+.btn-next:disabled, .btn-confirm:disabled{
+  background-color: variables.$lavender-blue-shadow;
 }
+
 @media (min-width: 37.5em) {
   :host {
     width: 28.125em;

@@ -12,7 +12,7 @@ body {
   padding: 0;
   font-family: variables.$global-font;
   font-size: 16px;
-  background-color: variables.$magnolia;
+  background-color: variables.$cotton-ball;
   @include variables.flexSpaceBetween(column);
   width: 100vw;
   height: 100vh;
@@ -31,15 +31,15 @@ a,
 a:visited,
 a:active {
   text-decoration: none;
-  color: variables.$cool-gray;
+  color: variables.$bright-manatee;
   @include variables.body-primary-l;
 }
 
 .btn {
   height: 2.5rem;
   width: 6rem;
-  background-color: variables.$marine-blue;
-  color: variables.$white;
+  background-color: variables.$sub-nautical;
+  color: variables.$bright-white;
   @include variables.body-primary-xs();
   border: none;
   border-radius: .25rem;
@@ -73,7 +73,7 @@ mat-card {
   top: -5rem;
   left: 50%;
   transform: translate(-50%, 0%);
-  background-color: variables.$white !important;
+  background-color: variables.$bright-white !important;
   width: 21.5rem;
   height: fit-content;
   padding: 2rem 1.5rem;

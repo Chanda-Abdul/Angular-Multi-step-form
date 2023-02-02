@@ -4,18 +4,18 @@
 $global-font: 'Ubuntu', sans-serif;
 
 /* Primary Colors */
-$marine-blue: hsl(213, 96%, 18%);
-$purplish-blue: hsl(243, 100%, 62%);
-$pastel-blue: hsl(228, 100%, 84%);
-$light-blue: hsl(206, 94%, 87%);
+$sub-nautical: hsl(213, 96%, 18%);
+$shady-neon-blue: hsl(243, 100%, 62%);
+$lavender-blue-shadow: hsl(243, 100%, 77%);
+$dithered-sky: hsl(206, 94%, 87%);
 $strawberry-red: hsl(354, 84%, 57%);
 
 /* Neutral Colors */
-$cool-gray: hsl(231, 11%, 63%);
-$light-gray: hsl(229, 24%, 87%);
-$magnolia: hsl(217, 100%, 97%);
-$alabaster: hsl(231, 100%, 99%);
-$white: hsl(0, 0%, 100%);
+$bright-manatee: hsl(231, 11%, 63%);
+$delicate-lilac-crystal: hsl(229, 24%, 87%);
+$cotton-ball: hsl(216, 100%, 97%);
+$wash-me: hsl(228, 100%, 99%);
+$bright-white: hsl(0, 0%, 100%);
 
 
 /* Typography */
@@ -25,14 +25,14 @@ $white: hsl(0, 0%, 100%);
   line-height: 1.75rem;
   letter-spacing: 0;
   text-align: left;
-  color: $marine-blue;
+  color: $sub-nautical;
 }
 
 @mixin body-primary-l {
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5rem;
-  color: $cool-gray;
+  color: $bright-manatee;
 }
 
 @mixin body-primary-m {
@@ -57,7 +57,7 @@ $white: hsl(0, 0%, 100%);
   font-weight: 400;
   font-size: .75rem;
   line-height: 1.1rem;
-  color: $marine-blue;
+  color: $sub-nautical;
 }
 
 
