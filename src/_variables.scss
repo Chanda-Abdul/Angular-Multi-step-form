@@ -23,7 +23,7 @@ $white: hsl(0, 0%, 100%);
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.75rem;
-  letter-spacing: 0px;
+  letter-spacing: 0;
   text-align: left;
   color: $marine-blue;
 }
@@ -44,7 +44,7 @@ $white: hsl(0, 0%, 100%);
   font-weight: 500;
   font-size: .875rem;
   line-height: 1rem;
-  letter-spacing: 1px;
+  letter-spacing: 0.063rem;
 }
 
 @mixin body-primary-xs {

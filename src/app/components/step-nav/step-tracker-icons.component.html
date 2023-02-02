@@ -1,0 +1,10 @@
+<div class="step-display">
+  <div *ngFor="let step of stepDetails"
+       class="step">
+    <div class="step_number"
+         [ngClass]="{'selected' : activeStep$ === step.step}"> {{step.step}}</div>
+    <div class="step_details">
+      <div class="step_title">Step {{step.step}}</div>
+      <div class="step_description">{{step.description}}</div>
+    </div>
+  </div>

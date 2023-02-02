@@ -1,39 +1,27 @@
 <div class="container">
   <div class="row">
-    <app-step-nav (step)="stepChanged"
-                  class="nav"> </app-step-nav>
+    <app-step-tracker-icons class="nav"> </app-step-tracker-icons>
     <div class="column">
       <form>
         <ng-container [formGroup]="stepForm"
                       name="stepForm"
                       (submit)="confirmAndSubmitForm()">
 
-          <app-step-one-personal-details *ngIf="activeStep == 1"
+          <app-step-one-personal-details *ngIf="activeStep$ == 1"
                                          formGroupName="personalDetails"></app-step-one-personal-details>
-          <app-step-two-plan-details *ngIf="activeStep == 2"
+          <app-step-two-plan-details *ngIf="activeStep$ == 2"
                                      formGroupName="planDetails"></app-step-two-plan-details>
-          <app-step-three-add-ons *ngIf="activeStep == 3"
+          <app-step-three-add-ons *ngIf="activeStep$ == 3"
                                   formGroupName="addOnDetails"></app-step-three-add-ons>
-          <app-step-four-summary *ngIf="activeStep == 4"
+          <app-step-four-summary *ngIf="activeStep$ == 4"
                                  [stepForm]="stepForm"></app-step-four-summary>
 
-          <app-step-five-confim *ngIf="activeStep == 5"></app-step-five-confim>
-          <!-- <pre style="margin-top: 50px; border: 1px solid red;width: fit-content;">
-  {{this.stepForm.value |json}}
-</pre> -->
+          <app-step-five-confim *ngIf="activeStep$ == 5"></app-step-five-confim>
         </ng-container>
 
       </form>
-      <app-progress-nav class="progress"></app-progress-nav>
+      <app-progression-buttons class="progress"></app-progression-buttons>
     </div>
   </div>
 
-
-
-
 </div>
-
-
-
-<!-- <app-progress-nav></app-progress-nav> -->
-<!-- [activeStep]="current"  (activeStep)="activeStep($event)" -->

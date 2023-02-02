@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { FormService } from './form.service';
 
 
@@ -10,35 +10,23 @@ import { FormService } from './form.service';
 
 })
 export class FormComponent implements OnInit {
-
   stepForm!: FormGroup;
-// To-Do => add step observable form service
-  activeStep: number =1;
-  // TO-Do => fix step emitter
-  @Output() stepChanged: EventEmitter<number> = new EventEmitter<number>();
+  activeStep$: number;
 
-
-  constructor(private fb: FormBuilder, private formService: FormService) { }
+  constructor(private formService: FormService) { }
 
   ngOnInit(): void {
     this.stepForm = this.formService.stepForm;
-    // console.log(this.activeStep)
 
+    this.formService.activeStep$.subscribe(
+      step => this.activeStep$ = step
+    );
   }
 
-  // To-Do => move to service
-  nextStep() {
-    this.stepChanged.emit(this.activeStep++);
-
-  }
-  goBack() {
-    this.stepChanged.emit(this.activeStep--);
-  }
 
   confirmAndSubmitForm() {
     this.formService.submit();
-    this.stepChanged.emit(this.activeStep++);
-    // To-Do => add Timeout
+
   }
 }
 

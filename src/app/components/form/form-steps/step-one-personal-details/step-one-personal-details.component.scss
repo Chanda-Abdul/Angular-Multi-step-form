@@ -1,1 +1,37 @@
-// To-Do => update CSS
+@use "/src/variables";
+
+label {
+  display: inline-block;
+  width: 100%;
+  @include variables.body-secondary-s;
+}
+
+input {
+  @include variables.body-primary-xs;
+  display: inline-block;
+  width: 100%;
+  height: 2.5rem;
+  border-radius: .25rem;
+  border: 0.063rem solid variables.$light-gray;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0 0.5rem 1rem;
+  color: variables.$cool-gray !important;
+}
+
+input:focus,
+input:valid {
+  color: variables.$marine-blue;
+}
+input:invalid{  color: variables.$strawberry-red;}
+
+@media (min-width: 37.5em) {
+  label {
+    @include variables.body-primary-m;
+    margin-bottom: .5rem;
+  }
+
+  input {
+    height: 3rem;
+    margin-bottom: 1.5rem;
+  }
+}

@@ -4,21 +4,36 @@
 .container {
   width: 100vw;
   height: 100vh;
+  justify-content: flex-start;
 }
 
-
-.attribution {
-  font-size: .75rem;
-  text-align: center;
+.desktop {
+  display: none;
 }
 
-.attribution a {
-  color: variables.$purplish-blue;
-}
-
-
-@media (min-width: 600px) {
+@media (min-width: 37.5em) {
   .mobile {
     display: none;
+  }
+
+  .desktop {
+    display: contents;
+  }
+
+  footer {
+    position: relative;
+    bottom: -1rem;
+    width: 100%;
+    margin: .25rem auto;
+    background-color: variables.$white;
+  }
+
+  .attribution {
+    font-size: .75rem;
+    text-align: center;
+  }
+
+  .attribution a {
+    color: variables.$purplish-blue;
   }
 }

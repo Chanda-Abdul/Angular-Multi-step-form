@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormGroupDirective } from '@angular/forms';
+import { planOptions } from './planDetails.model';
 
 @Component({
   selector: 'app-step-two-plan-details',
@@ -12,67 +13,22 @@ export class StepTwoPlanDetailsComponent implements OnInit {
   stepForm!: FormGroup;
   planType: string = 'arcade' || 'advanced' || 'pro';
   timeFrame: string = 'monthly' || 'yearly';
-  totalCost = 0;
+  totalCost: number = 0;
   checked = false;
-
-  planOptions = [
-    {
-      plan: 'arcade',
-      icon: '/assets/images/icon-arcade.svg',
-      duration: {
-        monthly: {
-          price: '$9/mo',
-          addToTotal: 9,
-          promo: '',
-        },
-        yearly: {
-          price: '$90/yr',
-          addToTotal: 90,
-          promo: '2 months free',
-        },
-      },
-    },
-    {
-      plan: 'advanced',
-      icon: '/assets/images/icon-advanced.svg',
-      duration: {
-        monthly: {
-          price: '$12/mo',
-          addToTotal: 12,
-          promo: '',
-        },
-        yearly: {
-          price: '$120/yr',
-          addToTotal: 120,
-          promo: '2 months free',
-        },
-      },
-    },
-    {
-      plan: 'pro',
-      icon: '/assets/images/icon-pro.svg',
-      duration: {
-        monthly: {
-          price: '$15/mo',
-          addToTotal: 15,
-          promo: '',
-        },
-        yearly: {
-          price: '$150/yr',
-          addToTotal: 150,
-          promo: '2 months free',
-        },
-      },
-    },
-  ];
+  planOptions = planOptions;
 
   constructor(private rootFormGroup: FormGroupDirective) { }
 
   ngOnInit(): void {
     this.stepForm = this.rootFormGroup.control.get('planDetails') as FormGroup;
-    this.updatePlanType(this.planType);
+    this.timeFrame = this.stepForm.controls['duration'].value || 'monthly';
+    this.checked = this.timeFrame === 'monthly' ? false : true;
+    this.planType = this.planType || 'arcade';
   }
 
+  public onPlanChange(plan: string) {
+    this.planType = plan;
+  }
 
   updatePlanType(plan: string, cost?: number) {
     this.planType = plan;
@@ -118,7 +74,5 @@ export class StepTwoPlanDetailsComponent implements OnInit {
     }
   }
 
-  ngOnDestroy(): void {
-    //TO DO => validate and save form plan details
-  }
+
 }

@@ -1,21 +1,10 @@
 @use "/src/variables";
 
-@media (max-width: 600px) {
-
-  // .nav {
-  //   margin-top: 1rem;
-  //   position: fixed;
-  //   bottom: 0;
-  //   width: 100%;
-  //   height: 72px;
-  //   @include variables.flexSpaceBetween(row);
-  //   padding-left: 1rem;
-  //   background-color: variables.$white;
-  // }
   :host {
     width: 100vw;
     height: 11rem;
     position: relative;
+    top: -1rem;
     @include variables.flexCenter(column);
     justify-content: flex-start;
     background-color: variables.$purplish-blue;
@@ -26,17 +15,17 @@
   .step-display {
     @include variables.flexSpaceBetween(row);
     @include variables.body-primary-s;
-    width: 11rem;
+    width: 11.25rem;
     color: variables.$white;
-    height: 100px;
+    height: 6.25rem;
   }
-}
+
 
 .step_number {
   @include variables.body-primary-s();
   width: 2rem;
   height: 2rem;
-  border: 1px solid variables.$white;
+  border: 0.063rem solid variables.$white;
   color: variables.$white;
   border-radius: 50%;
   @include variables.flexCenter(column);
@@ -51,26 +40,22 @@
   display: none;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 37.5em) {
   :host {
-    height: 568px;
+    height: 35.5rem;
     width: 274px;
-
-    border-radius: 10px;
-
-    // position: relative;
+    top: 0;
+    border-radius: 0.625rem;
     @include variables.flexCenter(column);
     justify-content: flex-start;
     align-items: baseline;
     background-color: variables.$purplish-blue;
     background: url("/assets/images/bg-sidebar-desktop.svg");
-    // background-size:100%;
-    padding-top: 40px;
+    padding-top: 2.5rem;
     padding-left: 2rem;
   }
 
   .step_title {
-    // display: inline-block;
     margin-bottom: 0.25rem;
     @include variables.body-secondary-s;
     line-height: 0.875rem;
@@ -78,7 +63,6 @@
   }
 
   .step_description {
-    // display: inline-block;
     @include variables.body-primary-s;
     font-weight: 700;
     color: variables.$white;
@@ -95,10 +79,7 @@
   .step {
     width: 135px;
     height: 2rem;
-    // border: 1px solid variables.$white;
-    // border-radius: 50%;
     @include variables.flexSpaceBetween(row);
-
     margin-bottom: 2rem;
   }
 

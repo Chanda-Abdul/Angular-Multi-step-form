@@ -2,20 +2,24 @@
   <mat-card class="step-two">
     <mat-card-header>
       <mat-card-title-group class="title">
-        <mat-card-title class="select">Select your plan</mat-card-title>
-        <mat-card-subtitle>You have the option of monthly or yearly billing.</mat-card-subtitle>
+        <mat-card-title role="heading"
+                        aria-level="1"
+                        class="select">Select your plan</mat-card-title>
+        <mat-card-subtitle role="heading"
+                           aria-level="2">You have the option of monthly or yearly billing.</mat-card-subtitle>
       </mat-card-title-group>
     </mat-card-header>
     <mat-card-content>
-      <!-- TO-DO => toggle select -->
+
       <mat-button-toggle-group name="options"
+                               #group="matButtonToggleGroup"
                                aria-label="planOptions"
-                               [value]="planType">
-        <mat-button-toggle *ngFor="let plan of planOptions; let i = index"
-                           [attr.data-index]="i"
+                               [value]="group.value"
+                               (change)="onPlanChange(group.value)">
+        <mat-button-toggle *ngFor="let plan of planOptions"
                            [value]="plan.plan"
-                           aria-pressed="false"
-                           (change)="updatePlanType(plan.plan, plan.duration[timeFrame].addToTotal)">
+                           [checked]="plan.plan === planType"
+                           (click)="updatePlanType(plan.plan, plan.duration[timeFrame].addToTotal)">
 
           <div class="plan">
             <img mat-card-image
@@ -32,7 +36,7 @@
 
       <div class="toggle-area">
         <div class="toggle">
-          <label [ngClass]="{'checked':checked}" >Monthly</label>
+          <label [ngClass]="{'checked':checked}">Monthly</label>
           <mat-slide-toggle [checked]="checked"
                             (change)="toggleDuration()">
           </mat-slide-toggle>

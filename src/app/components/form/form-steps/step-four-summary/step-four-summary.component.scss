@@ -1,19 +1,13 @@
 @use "/src/variables";
 
-// To-Do => update CSS!
-ul {
-  list-style: none;
-
-}
 
 span {
   display: contents;
   color: variables.$purplish-blue;
   font-size: 16px;
   font-weight: 700;
-  line-height: 20px;
-  letter-spacing: 0px;
-  // text-align: right;
+  line-height: 1.25rem;
+  letter-spacing: 0;
 
 }
 
@@ -21,16 +15,16 @@ table {
   height: fit-content;
   margin: 2rem auto 1.5rem auto;
   padding: 1rem;
-  width: 100%;
+  width: 18.4rem;
   background-color: variables.$alabaster;
   border-radius: .5rem;
 }
 
 mat-divider {
   color: variables.$cool-gray;
-  height: 2px;
+  height: 0.125rem;
   width: 100%;
-  border-radius: 0px;
+  border-radius: 0;
   opacity: .2;
 
 }
@@ -55,7 +49,7 @@ tr {
 .type {
   @include variables.flexSpaceBetween(column);
   align-items: flex-start;
-  height: 39px;
+  height: 2.438rem;
   @include variables.body-primary-xs;
   letter-spacing: 0;
   color: variables.$marine-blue;
@@ -69,6 +63,7 @@ button {
   text-decoration-line: underline;
   @include variables.body-primary-s;
   letter-spacing: 0;
+  padding-left: 0;
 }
 
 .cost {
@@ -107,34 +102,27 @@ button {
   line-height: 1.25rem;
 }
 
-@media (min-width: 600px) {
-th{
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
-}
+@media (min-width: 37.5em) {
+
+  table {
+    width: 28.125rem;
+  }
+  th {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
   .type {
-    // @include variables.flexSpaceBetween(column);
-    // align-items: flex-start;
     height: auto;
-    // @include variables.body-primary-xs;
-    // letter-spacing: 0;
-    // padding-bottom: 27px;
   }
 
   button {
-    margin-top: 7px;
-
-    //   border: none;
-    //   background-color: transparent;
-    //   color: variables.$cool-gray;
-    //   text-decoration-line: underline;
-    //   @include variables.body-primary-s;
-    //   letter-spacing: 0;
+    margin-top: .5rem;
     padding-left: 0;
   }
 
   tr {
-  padding-bottom: 1.5rem;
+    padding-bottom: 0;
   }
 
 }

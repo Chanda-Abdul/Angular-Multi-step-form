@@ -2,23 +2,26 @@
   <mat-card class="step-three">
     <mat-card-header>
       <mat-card-title-group class="title">
-        <mat-card-title>Pick add-ons</mat-card-title>
-        <mat-card-subtitle> Add-ons help enhance your gaming experience.</mat-card-subtitle>
+        <mat-card-title role="heading"
+                        aria-level="1">Pick add-ons</mat-card-title>
+        <mat-card-subtitle role="heading"
+                           aria-level="2"> Add-ons help enhance your gaming experience.</mat-card-subtitle>
       </mat-card-title-group>
     </mat-card-header>
     <mat-card-content class="addon-section">
-
-      <mat-checkbox *ngFor="let addOn of addOnOptions"
-                    [value]="addOn.formName"
-                    (change)="updateAddOns($event, addOn.formName)">
-        <div class="addOn">
-          <div class="details">
-            <span class="addon_title">{{addOn.addOn}} </span>
-            <span class="addon_desc">{{addOn.desc}} </span>
+      <form [formGroup]="stepForm">
+        <mat-checkbox *ngFor="let addOn of addOnOptions"
+                      formControlName="{{addOn.formName}}"
+                      (change)="toggleAddOn($event, addOn.formName)">
+          <div class="addOn">
+            <div class="details">
+              <span class="addon_title">{{addOn.addOn}} </span>
+              <span class="addon_desc">{{addOn.desc}} </span>
+            </div>
+            <span class="addon_price">{{addOn.timeFrame[timeFrame].price}}</span>
           </div>
-          <span class="addon_price">{{addOn.timeFrame[timeFrame].price}}</span>
-        </div>
-      </mat-checkbox>
+        </mat-checkbox>
+      </form>
     </mat-card-content>
   </mat-card>
 

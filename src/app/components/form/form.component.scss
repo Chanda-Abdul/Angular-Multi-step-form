@@ -1,17 +1,25 @@
 @use "/src/variables";
 
+@media (max-width: 37.5em) {
+  .container {
+  
+    min-height: calc(100vh - 15.625rem);
+    // position: relative;
+  }
+
+  // form{
+  //   position: relative;
+  //   top: 0;
+  // }
+}
+
+
 :host {
   width: 100%;
 }
 
-@media (max-width: 600px) {
-  .container {
-    min-height: calc(100vh - 250px);
-  }
-
-  .progress {
-    display: none;
-  }
+.progress {
+  display: none;
 }
 
 
@@ -24,16 +32,11 @@ form label {
   padding-block-end: 0.25rem;
 }
 
-// .attribution {
-//   display: none;
-// }
-
-@media (min-width: 600px) {
-
+@media (min-width: 37.5em) {
   :host {
     @include variables.flexCenter(column);
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
   }
 
   .nav {
@@ -42,26 +45,26 @@ form label {
 
   .container {
     background: variables.$white;
-    box-shadow: 0px 25px 40px -20px rgba(0, 0, 0, 0.0951141);
+    box-shadow: 0 1.5rem 2.5rem -1.25rem rgba(0, 0, 0, 0.0951141);
     border-radius: 1rem;
     padding: 1rem;
     margin: auto auto;
     @include variables.flexSpaceBetween(row);
-    height: 600px;
-    width: 940px;
+    height: 37.5rem;
+    width: 58.75rem;
   }
 
   .row {
     @include variables.flexSpaceBetween(row);
     width: 100%;
-
+    height: 37.5rem;
   }
 
   .column {
-    width: 650px;
+    width: 40.625rem;
     @include variables.flexSpaceBetween(column);
-    height: 568px;
-    padding-top: 56px;
+    height: 35.5rem;
+    padding-top: 3.5rem;
     padding-bottom: 2rem;
   }
 

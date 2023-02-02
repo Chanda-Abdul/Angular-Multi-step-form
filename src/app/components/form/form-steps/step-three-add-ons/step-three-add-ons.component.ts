@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormGroupDirective } from '@angular/forms';
+import { addOnOptions } from './addOnOptions.model';
 
 @Component({
   selector: 'app-step-three-add-ons',
@@ -8,55 +9,42 @@ import { FormGroup, FormGroupDirective } from '@angular/forms';
 })
 export class StepThreeAddOnsComponent implements OnInit {
   stepForm!: FormGroup;
-
-  @Input() timeFrame: string | any = 'monthly' || 'yearly';
-  @Input() totalCost: number = 0;
+  addOnOptions = addOnOptions;
+  timeFrame: string | any = 'monthly' || 'yearly';
   previousCost = this.rootFormGroup.form.controls['planDetails'];
 
-  addOnOptions = [
-    {
-      addOn: 'Online service', desc: 'Access to multiplayer games', formName: 'service', timeFrame: {
-        monthly: {
-          price: '+$1/mo', addToTotal: 1,
-        },
-        yearly: {
-          price: '+$10/yr', addToTotal: 10,
-        },
-      },
-    },
-    {
-      addOn: 'Larger storage', desc: 'Extra 1TB of cloud save', formName: 'storage', timeFrame: {
-        monthly: {
-          price: '+$2/mo', addToTotal: 2,
-        },
-        yearly: {
-          price: '+$20/yr', addToTotal: 20,
-        },
-      },
-    },
-    {
-      addOn: 'Customizable Profile', desc: 'Custom theme on your profile', formName: 'customization', timeFrame: {
-        monthly: {
-          price: '+$2/mo', addToTotal: 2,
-        },
-        yearly: {
-          price: '+$20/yr', addToTotal: 20,
-        },
-      },
-    },
-  ];
+
   constructor(private rootFormGroup: FormGroupDirective) { }
 
 
   ngOnInit(): void {
     this.timeFrame = this.previousCost.value.duration;
     this.stepForm = this.rootFormGroup.control.get('addOnDetails') as FormGroup;
-
-    // TO-Do => Check if add ons were previously selected
-
+    this.updateAddOns();
   }
 
-  updateAddOns(event: any, addOn: any) {
+
+  updateAddOns() {
+    const previousTotalCost = this.previousCost.value.totalCost;
+
+    let serviceCostUpdated = this.stepForm.value.service ? this.addOnOptions[0].timeFrame[this.timeFrame].addToTotal : 0;
+    let storageCostUpdated = this.stepForm.value.storage ? this.addOnOptions[1].timeFrame[this.timeFrame].addToTotal : 0;
+    let customizationCostUpdated = this.stepForm.value.customization ? this.addOnOptions[2].timeFrame[this.timeFrame].addToTotal : 0;
+
+    this.stepForm.patchValue({
+      serviceCost: serviceCostUpdated,
+      storageCost: storageCostUpdated,
+      customizationCost: customizationCostUpdated,
+    })
+    this.previousCost.patchValue({
+      totalCost: previousTotalCost + serviceCostUpdated + storageCostUpdated + customizationCostUpdated
+    })
+  }
+
+
+
+
+  toggleAddOn(event: any, addOn: any) {
     const previousTotalCost = this.previousCost.value.totalCost
     let addOnCost = this.addOnOptions[this.addOnOptions.findIndex(a => a.formName == addOn)].timeFrame[this.timeFrame].addToTotal;
 
@@ -79,6 +67,5 @@ export class StepThreeAddOnsComponent implements OnInit {
         totalCost: previousTotalCost - addOnCost
       })
     }
-
   }
 }

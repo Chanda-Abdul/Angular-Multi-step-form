@@ -1,8 +1,10 @@
 <mat-card class="step-four">
   <mat-card-header>
     <mat-card-title-group class="title">
-      <mat-card-title>Finishing up</mat-card-title>
-      <mat-card-subtitle>Double-check everything looks OK before confirming.</mat-card-subtitle>
+      <mat-card-title role="heading"
+                      aria-level="1">Finishing up</mat-card-title>
+      <mat-card-subtitle role="heading"
+                         aria-level="2">Double-check everything looks OK before confirming.</mat-card-subtitle>
     </mat-card-title-group>
   </mat-card-header>
   <mat-card-content>
@@ -10,8 +12,8 @@
       <th>
         <tr>
           <div class="type">{{planDetails.plan | titlecase}} ({{planDetails.duration | titlecase}})
-            <!-- TO-DO => add (click) -->
-            <button mat-button>Change</button>
+            <button mat-button
+                    (click)="changePlan()">Change</button>
 
           </div>
           <div class="cost">${{planDetails.planCost}}/{{planDetails.duration === 'monthly' ? 'mo' : 'yr'}}</div>

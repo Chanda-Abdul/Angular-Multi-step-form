@@ -14,13 +14,10 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./step-one-personal-details.component.scss']
 })
 
-
-
 export class StepOnePersonalDetailsComponent implements OnInit, OnDestroy {
   stepForm!: FormGroup;
 
   @Input() formGroupName!: string;
-
 
   nameValidationErrorMessage!: string;
 
@@ -33,10 +30,8 @@ export class StepOnePersonalDetailsComponent implements OnInit, OnDestroy {
   constructor(private rootFormGroup: FormGroupDirective) { }
 
   ngOnInit(): void {
-
-
     this.stepForm = this.rootFormGroup.control.get(this.formGroupName) as FormGroup;
-    console.log(this.stepForm)
+
   }
 
   ngOnDestroy(): void { }

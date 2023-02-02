@@ -2,16 +2,17 @@
 
 .addon-section {
   @include variables.flexSpaceBetween(column);
-  margin: 6px 0 .75rem 0;
+  margin: 0.375rem 0 .75rem 0;
 
 }
+
 span {
   display: block;
 }
 
 .addOn {
   @include variables.flexSpaceBetween(row);
-  width: 230px;
+  width: 14.375rem;
 }
 
 .details {
@@ -19,25 +20,51 @@ span {
   width: 100%;
   align-items: baseline;
   justify-content: space-evenly;
-  height: 39px;
+  height: 2.438rem;
 }
 
 mat-checkbox {
   color: variables.$purplish-blue;
   @include variables.flexSpaceBetween(row);
-  border: 1px solid variables.$light-gray;
-  height: 62px;
-  border-radius: 8px;
+  border: 0.063rem solid variables.$light-gray;
+  height: 3.875rem;
+  border-radius: 0.5rem;
   margin: 0.5rem 0;
   padding: 0.5rem 1rem 0.5rem 0;
-  width: 295px;
+  width: 18.4rem;
+}
+
+
+// TO-DO => change mat-checkbox styles
+mat-button-toggle-checked,
+mat-mdc-checkbox-checked {
+  border: 0.063rem solid variables.$purplish-blue;
+  background-color: variables.$magnolia;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent {
+  .mat-checkbox-ripple .mat-ripple-element {
+    background-color: variables.$purplish-blue !important;
+    border-color: variables.$purplish-blue !important;
+  }
+
+  .mat-checkbox-background,
+  .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: variables.$purplish-blue !important;
+    border-color: variables.$purplish-blue !important;
+  }
+}
+
+::ng-deep .mat-checkbox.mat-accent {
+  .mat-checkbox-ripple .mat-ripple-element {
+    background-color: variables.$purplish-blue !important;
+    border-color: variables.$purplish-blue !important;
+  }
 }
 
 .addon_title {
-
   @include variables.body-primary-s;
-  color: variables.$marine-blue; 
-
+  color: variables.$marine-blue;
 }
 
 .addon_desc {
@@ -56,44 +83,37 @@ label {
   padding: 0;
 }
 
-mat-button-toggle-checked,
-mat-mdc-checkbox-checked {
-  border: 1px solid variables.$purplish-blue;
-  background-color: variables.$magnolia;
-}
 
-
-@media (min-width: 600px) {
+@media (min-width: 37.5em) {
   .column {
-    width: 450px;
-    padding-right: 100px;
+    width: 28.125rem;
+    padding-right: 6.25rem;
   }
+
   mat-checkbox {
-    width: 450px;
-    height: 81px;
-    padding-right: 0.5rem 2rem 0.5rem 1rem;
+    width: 28.125rem;
+    height: 5rem;
+    padding-left: 0.5rem;
   }
 
   .addOn {
     padding-left: .5rem;
-    padding-top: 10px;
-    width: calc(450px - 68px);
+    padding-top: 0.625rem;
+    width: calc(28.125rem - 4.75rem);
 
   }
 
   .details {
     @include variables.flexSpaceBetween(column);
-    width: 200px;
+    width: 12.5rem;
     align-items: baseline;
     justify-content: space-evenly;
-    height: 45px;
+    height: 2.813rem;
   }
 
   .addon_title {
     font-size: 1rem;
     line-height: 1.1rem;
-
-
   }
 
   .addon_desc,
