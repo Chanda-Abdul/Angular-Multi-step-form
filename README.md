@@ -74,7 +74,7 @@ Users should be able to:
 ### Links
 
 <b>Solution URL:</b> [here](https://github.com/Chanda-Abdul/Angular-Multi-step-form) | <b>Live Site URL:</b>
-<!-- [Add live site URL here](https://your-live-site-url.com) -->
+[here](https://dazzling-crisp-559db7.netlify.app/)
 
 ## My process
 
@@ -115,8 +115,8 @@ const proudOfThisFunc = () => {
 - [<img src="https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white" alt="Material UI icon" height="30" /> Material Checkbox](https://material.angular.io/components/checkbox/overview) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.`<mat-checkbox>` provides the same functionality as a native `<input type="checkbox">` enhanced with Material Design styling and animations.
 
 - [<img src="https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white" alt="Material UI icon" height="30" /> Creating a Custom @NgModule for Material Components in Angular](https://armno.medium.com/creating-a-custom-material-module-in-angular-ee6a5e925d30) - To keep AppModule clean, we can create another NgModule that takes care of importing Material modules to use. 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+<!-- - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept. -->
 
 ## Author
 
