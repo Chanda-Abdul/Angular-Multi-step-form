@@ -71,7 +71,7 @@ Users should be able to:
 
 </details>
 
-### Links
+## Links
 
 <b>Solution URL:</b> [here](https://github.com/Chanda-Abdul/Angular-Multi-step-form) | <b>Live Site URL:</b>
 [here](https://dazzling-crisp-559db7.netlify.app/)
