@@ -31,8 +31,10 @@ Users should be able to:
 - [x] See hover and focus states for all interactive elements on the page
 
 ## Screenshots
-<details>
-<summary><b> Mobile Screenshots @ 375px</b></summary>
+<!-- <details>
+<summary> -->
+<b> Mobile Screenshots @ 375px</b>
+<!-- </summary> -->
 
 ### Step 1
 <img src="src/assets/screens/mobile-step-1.png" width="375px"/>
@@ -52,10 +54,12 @@ Users should be able to:
 ### Confirmation
 <img src="src/assets/screens/mobile-step-5.png" width="375px"/>
 
-</details>
+<!-- </details> -->
 
-<details>
-<summary><b> Desktop Screenshots @ 1440px</b></summary>
+<!-- <details>
+<summary> -->
+<b> Desktop Screenshots @ 1440px</b>
+<!-- </summary> -->
 
 ### Step 1
 <img src="src/assets/screens/desktop-step-1.png"/>
@@ -75,13 +79,15 @@ Users should be able to:
 ### Confirmation
 <img src="src/assets/screens/desktop-step-5.png"/>
 
-</details>
+<!-- </details> -->
 
 ## Links
+<center>
 
 <b>Solution URL:</b> [here](https://github.com/Chanda-Abdul/Angular-Multi-step-form) | <b>Live Site URL:</b>
 [here](https://dazzling-crisp-559db7.netlify.app/)
 
+</center>
 ## My process
 ### Setup
 Initially found it challenging to figure out how to decide how to arrange the form and where state should live. I started with everything inside one form component, but as the component grew it became difficult to keep track of everything, So I ultimately decided to have a <i>`<Form>`([code]() | [live]())</i> component with all of the nested childeren for each step. Each step has a decent amount of functionaly and styling so I decided this was the best approach.
