@@ -11,40 +11,51 @@
       </mat-card-title-group>
     </mat-card-header>
     <mat-card-content class="form-controls">
-      <label for="name">Name</label>
-
+      <!-- name input -->
+      <div class="input-details">
+        <label for="name">Name</label>
+        <label for="error"
+               *ngIf="this.stepForm.controls['name'].invalid && this.stepForm.controls['name'].touched"
+               class="error-alert">Name is required</label>
+      </div>
       <input type="text"
              matInput
              formControlName="name"
              placeholder="e.g. Stephen King" />
-      <!-- To-Do => form input validation stylin and functionality -->
-      <!-- [formControl]="stepForm.personalDetails.nameFormControl"
-               [errorStateMatcher]="matcher"[ngClass]="{'alert-danger': nameValidationErrorMessage }-->
 
-      <!-- <span class="alert-danger">{{nameValidationErrorMessage}}</span> -->
-      <mat-hint>{{nameValidationErrorMessage}}</mat-hint>
-      <!-- <mat-error *ngIf="nameFormControl.hasError('minlength') && !nameFormControl.hasError('name')">
-        {{nameValidationErrorMessage['minlength']}}
-      </mat-error>
-      <mat-error *ngIf="nameFormControl.hasError('required')">
-        {{nameValidationErrorMessage['required']}}
-      </mat-error> -->
-
-      <label for="email">Email Address</label>
+      <!-- email input -->
+      <div class="input-details">
+        <label for="email">Email Address</label>
+        <label for="error"
+               *ngIf="this.stepForm.controls['email'].invalid && this.stepForm.controls['email'].touched"
+               class="error-alert">Email is required</label>
+      </div>
       <input type="text"
              name="email"
              placeholder="e.g. stephenking@lorem.com"
              formControlName="email"
              required>
 
-      <!-- To-Do => form input validation styles and functionality -->
-
-      <label for="phone">Phone Number</label>
+      <!-- phone number input -->
+      <div class="input-details">
+        <label for="phone">Phone Number</label>
+        <label for="error"
+               *ngIf="this.stepForm.controls['phone'].invalid && this.stepForm.controls['phone'].touched"
+               class="error-alert">Phone number is required</label>
+      </div>
       <input type="text"
              name="phone"
              placeholder="e.g. +1 234 567 890"
              formControlName="phone"
              required>
+
+
+
+
+
+
+
+
 
       <!-- To-Do => form input validation styles and functionality -->
     </mat-card-content>

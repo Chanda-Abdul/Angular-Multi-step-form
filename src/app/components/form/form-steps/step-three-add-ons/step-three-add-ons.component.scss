@@ -1,5 +1,5 @@
 @use '/src/variables';
-
+// TO-DO => add styles for checkbox select
 .addon-section {
   @include variables.flexSpaceBetween(column);
   margin: 0.375rem 0 .75rem 0;
@@ -34,8 +34,12 @@ mat-checkbox {
   width: 18.4rem;
 }
 
-
 // TO-DO => change mat-checkbox styles
+#mat-mdc-checkbox-checked {
+  border: 0.063rem solid variables.$shady-neon-blue !important;
+}
+
+
 mat-button-toggle-checked,
 mat-mdc-checkbox-checked {
   border: 0.063rem solid variables.$shady-neon-blue;

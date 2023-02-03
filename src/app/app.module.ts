@@ -14,14 +14,14 @@ import { StepThreeAddOnsComponent } from './components/form/form-steps/step-thre
 import { StepFourSummaryComponent } from './components/form/form-steps/step-four-summary/step-four-summary.component';
 import { StepFiveConfimComponent } from './components/form/form-steps/step-five-confim/step-five-confim.component';
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
-import { ProgressButtonComponent } from './components/progression-buttons/progress-nav.component';
+import { ProgressionButtonsComponent } from './components/progression-buttons/progression-buttons.component';
 import { StepTrackerIconsComponent } from './components/step-nav/step-tracker-icons.component';
 import { MaterialModule } from './material.module';
 @NgModule({
   declarations: [
     AppComponent,
     StepTrackerIconsComponent,
-    ProgressButtonComponent,
+    ProgressionButtonsComponent,
     FormComponent,
     StepOnePersonalDetailsComponent,
     StepTwoPlanDetailsComponent,

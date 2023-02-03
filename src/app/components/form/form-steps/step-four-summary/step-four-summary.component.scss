@@ -10,6 +10,10 @@ span {
   letter-spacing: 0;
 
 }
+mat-card-content{
+  height: 16rem;
+  @include variables.flexSpaceBetween(column);
+}
 
 table {
   height: fit-content;
@@ -66,6 +70,10 @@ button {
   padding-left: 0;
 }
 
+.btn-change:hover {
+  color: variables.$shady-neon-blue;
+}
+
 .cost {
   @include variables.heading-m;
   font-size: 0.875rem;
@@ -86,7 +94,8 @@ button {
 }
 
 .total {
-  padding: 0 1rem;
+  width: 100%;
+  padding: 0 1.5rem;
   @include variables.flexSpaceBetween(row);
   color: variables.$bright-manatee;
   font-size: 0.875rem;
@@ -107,6 +116,7 @@ button {
   table {
     width: 28.125rem;
   }
+
   th {
     margin-top: 1rem;
     margin-bottom: 1.5rem;

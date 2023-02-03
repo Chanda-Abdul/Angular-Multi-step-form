@@ -36,8 +36,9 @@ a:active {
 }
 
 .btn {
-  height: 2.5rem;
-  width: 6rem;
+  display: inline-block;
+  min-height: 2.5rem;
+  min-width: 6rem;
   background-color: variables.$sub-nautical;
   color: variables.$bright-white;
   @include variables.body-primary-xs();

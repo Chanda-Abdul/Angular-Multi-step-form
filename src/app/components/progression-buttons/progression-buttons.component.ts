@@ -7,7 +7,7 @@ import { FormService } from '../form/form.service';
   templateUrl: './progression-buttons.component.html',
   styleUrls: ['./progression-buttons.component.scss']
 })
-export class ProgressButtonComponent implements OnInit {
+export class ProgressionButtonsComponent implements OnInit {
   stepForm!: FormGroup;
   activeStep$: number;
 
@@ -19,9 +19,6 @@ export class ProgressButtonComponent implements OnInit {
     this.formService.activeStep$.subscribe(
       step => this.activeStep$ = step
     );
-    console.log(this.stepForm.controls['personalDetails'].valid)
-
-
   }
 
   nextStep() {

@@ -31,7 +31,7 @@ export class StepOnePersonalDetailsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.stepForm = this.rootFormGroup.control.get(this.formGroupName) as FormGroup;
-
+console.log(this.stepForm.controls['name'])
   }
 
   ngOnDestroy(): void { }
