@@ -1,9 +1,29 @@
 <div class="step-card">
 
   <!-- TO-DO => add loader -->
-<mat-card class="confirm">
 
-   <img src="/assets/images/icon-thank-you.svg"
+
+
+
+<mat-card class="confirm">
+<div id="wifi-loader" *ngIf="loading">
+    <svg class="circle-outer" viewBox="0 0 86 86">
+        <circle class="back" cx="43" cy="43" r="40"></circle>
+        <circle class="front" cx="43" cy="43" r="40"></circle>
+        <circle class="new" cx="43" cy="43" r="40"></circle>
+    </svg>
+    <svg class="circle-middle" viewBox="0 0 60 60">
+        <circle class="back" cx="30" cy="30" r="27"></circle>
+        <circle class="front" cx="30" cy="30" r="27"></circle>
+    </svg>
+    <svg class="circle-inner" viewBox="0 0 34 34">
+        <circle class="back" cx="17" cy="17" r="14"></circle>
+        <circle class="front" cx="17" cy="17" r="14"></circle>
+    </svg>
+
+</div>
+<div class="confirm" *ngIf="!loading">
+  <img src="/assets/images/icon-thank-you.svg"
            alt="">
 
            <mat-card-header>
@@ -15,7 +35,8 @@
     <p> Thanks for confirming your subscription! We hope you have fun
       using our platform. If you ever need support, please feel free
       to email us at support@loremgaming.com.</p>
-  </mat-card-content>
+  </mat-card-content></div>
+
 
 </mat-card>
 <!-- Step 5 end [activeStep]="activeStep" -->

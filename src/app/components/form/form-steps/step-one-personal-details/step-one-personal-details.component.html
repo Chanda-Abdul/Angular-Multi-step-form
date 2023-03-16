@@ -15,14 +15,15 @@
       <div class="input-details">
         <label for="name">Name</label>
         <label for="error"
+               id="error"
                *ngIf="this.stepForm.controls['name'].invalid && this.stepForm.controls['name'].touched"
                class="error-alert">Name is required</label>
       </div>
       <input type="text"
              matInput
+             id="name"
              formControlName="name"
              placeholder="e.g. Stephen King" />
-
       <!-- email input -->
       <div class="input-details">
         <label for="email">Email Address</label>
@@ -32,10 +33,10 @@
       </div>
       <input type="text"
              name="email"
+             id="email"
              placeholder="e.g. stephenking@lorem.com"
              formControlName="email"
              required>
-
       <!-- phone number input -->
       <div class="input-details">
         <label for="phone">Phone Number</label>
@@ -45,19 +46,10 @@
       </div>
       <input type="text"
              name="phone"
+             id="phone"
              placeholder="e.g. +1 234 567 890"
              formControlName="phone"
              required>
-
-
-
-
-
-
-
-
-
-      <!-- To-Do => form input validation styles and functionality -->
     </mat-card-content>
   </mat-card>
 </ng-container>

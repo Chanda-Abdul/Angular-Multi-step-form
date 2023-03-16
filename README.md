@@ -97,30 +97,35 @@ Users should be able to:
 ### Setup
 Initially found it challenging to figure out how to decide how to arrange the form and where state should live. I started with everything inside one form component, but as the component grew it became difficult to keep track of everything, So I ultimately decided to have a <i>`<Form>`([code]() | [live]())</i> component with all of the nested childeren for each step. Each step has a decent amount of functionaly and styling so I decided this was the best approach.
 - `<step-two-plan-details>`([code]() | [live]())
+  - `<step-one-plan-details>`([code]() | [live]())
   - `<step-two-plan-details>`([code]() | [live]())
   - `<step-three-add-ons.component>`([code]() | [live]())
-  - `<step-two-plan-details>`([code]() | [live]())- `<step-two-plan-details>`([code]() | [live]())
-  - `<step-two-plan-details>`([code]() | [live]())
+  - `<step-four-plan-details>`([code]() | [live]())
+  - `<step-five-plan-details>`([code]() | [live]())
 
-## State Management
+### State Management
 - I knew that I would like to have seperate components for the <i>`<step-tracker-icons>`([code]() | [live]())</i>, and the <i>`<progression-buttons>`([code]() | [live]())</i> and the <i>`<form>`([code]() | [live]())</i>. Initally I used `@Input()`'s and `@Output()`'s within the form to update the `activeStep` and `stepForm`. 
 - I knew that I would later move `activeStep` and `stepForm` to a service, for better readability, maintainabilty, and scalability.
-- In `FormService` the `activeStep`piece of state can be viewed and updated with an Observable.  
-  ```ts
-  private activeStepSubject = new BehaviorSubject<number>(1);
-  activeStep$ = this.activeStepSubject.asObservable();
-  ...
+- In `FormService` the `activeStep`piece of state can be viewed and updated with an <b>Observable</b>.  
+```ts
+...
 
-  goToNextStep(number: number) {
-      this.activeStepSubject.next(number + 1);
-  }
-  ```
-- Components can access `activeStep$ ` by subscribing to the Observable
-  ```ts
-    this.formService.activeStep$.subscribe(
-        step => this.activeStep$ = step
-      );
-  ```
+private activeStepSubject = new BehaviorSubject<number>(1); 
+
+activeStep$ = this.activeStepSubject.as<b>Observable</b>();
+
+...
+
+goToNextStep(number: number) {
+    this.activeStepSubject.next(number + 1);
+}
+```
+- Components can then access `activeStep$ ` by subscribing to the <b>Observable</b>
+```ts
+  this.formService.activeStep$.subscribe(
+      step => this.activeStep$ = step
+    );
+```
 - The reactive `stepForm` also lives within the `FormService` so that it can be viewed and updated by multiple components as necessary
 ```ts
   multiStepForm: FormGroup = this.fb.group({

@@ -38,29 +38,21 @@ export class FormService {
     return this.multiStepForm;
   }
 
+  constructor(private fb: FormBuilder) { }
 
   goToNextStep(number: number) {
     this.activeStepSubject.next(number + 1);
-    //TO-DO => validate step 1 inputs and add error handling
-    //TO-DO => step 2 confirm selection?
-    //TO-DO => step 3 confirm selection?
-
   }
+
   goBackToPreviousStep(number: number) {
     this.activeStepSubject.next(number - 1);
-
   }
-
-  constructor(private fb: FormBuilder) { }
-
-
-
   submit() {
     //TO-DO => validate form
     this.goToNextStep(4);
     setTimeout(() => {
       this.activeStepSubject.next(1);
-    }, 5000);
+    }, 8000);
 
   }
 

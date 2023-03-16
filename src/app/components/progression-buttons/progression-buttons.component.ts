@@ -15,14 +15,22 @@ export class ProgressionButtonsComponent implements OnInit {
 
   ngOnInit(): void {
     this.stepForm = this.formService.stepForm;
-
     this.formService.activeStep$.subscribe(
       step => this.activeStep$ = step
     );
   }
 
   nextStep() {
-    this.formService.goToNextStep(this.activeStep$);
+    if ((this.activeStep$ == 1) && (this.stepForm.controls['personalDetails'].pristine) && (!this.stepForm.controls['personalDetails'].touched)) {
+      // TO-DO => display error message if step 1 is skipped
+
+      // console.log(this.stepForm.controls['personalDetails'].pristine, !this.stepForm.controls['personalDetails'].touched)
+
+    } else {
+      this.formService.goToNextStep(this.activeStep$);
+    }
+
+
 
   }
   goBack() {
